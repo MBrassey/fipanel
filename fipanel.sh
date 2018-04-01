@@ -204,9 +204,9 @@ home6="${cyan}[ ${reset}${blue}Sewer:${reset}${orange} $sewerprice${reset}${cyan
 home7="${cyan}[ ${reset}${blue}Trash:${reset}${orange} $trashprice${reset}${cyan} ]─────────────────────╼[ ${reset}$trashdate1${cyan} ]${reset}"
 home8="${cyan}[ ${reset}${blue}Signature:${reset}${orange} $sigprice${reset}${cyan} ]────────────╼[ ${reset}$sigdate1${cyan} ]${reset}"
 home9="${cyan}[ ${reset}${blue}Title:${reset}${orange} $titleprice${reset}${cyan} ]─────────────────╼[ ${reset}$titledate1${cyan} ]${reset}"
-home10="${cyan}[ ${reset}${blue}Citi:${reset}${orange} $titleprice${reset}${cyan} ]──────────────────────╼[ ${reset}$citidate1${cyan} ]${reset}"
-home11="${cyan}[ ${reset}${blue}Barclay:${reset}${orange} $barcprice${reset}${cyan} ]────────────────────╼[ ${reset}$barcdate1${cyan} ]${reset}"
-home12="${cyan}[ ${reset}${blue}Chase:${reset}${orange} $chaseprice${reset}${cyan} ]───────────────────────╼[ ${reset}$chasedate1${cyan} ]${reset}"
+home10="${cyan}[ ${reset}${blue}Citi:${reset}${orange} $titleprice${reset}${cyan} ]─────────────────────╼[ ${reset}$citidate1${cyan} ]${reset}"
+home11="${cyan}[ ${reset}${blue}Barclay:${reset}${orange} $barcprice${reset}${cyan} ]───────────────────╼[ ${reset}$barcdate1${cyan} ]${reset}"
+home12="${cyan}[ ${reset}${blue}Chase:${reset}${orange} $chaseprice${reset}${cyan} ]──────────────────────╼[ ${reset}$chasedate1${cyan} ]${reset}"
 IFS='
 '
 

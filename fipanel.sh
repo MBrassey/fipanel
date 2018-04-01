@@ -87,7 +87,7 @@ barcdate="28"
 chasedate="10"
 
 # [Green] make sure you've paid it [Orange] prepare to pay it
-if [["$mortdate" -lt "$today"]]
+if [[ "$mortdate" -lt "$today" ]]
    then
    mortdate1="${orange}✗ $month $mortdate${reset}"
    mortprice="${orange}$mortgage$(reset)"
@@ -96,7 +96,7 @@ if [["$mortdate" -lt "$today"]]
    mortprice="${green}$mortgage${reset}"
 fi
 
-if [["$hoadate" -lt "$today"]]
+if [[ "$hoadate" -lt "$today" ]]
    then
    hoadate1="${orange}✗ $month $hoadate${reset}"
    hoaprice="${orange}$hoa${reset}"
@@ -105,7 +105,7 @@ if [["$hoadate" -lt "$today"]]
    hoaprice="${green}$hoa${reset}"
 fi
 
-if [["$elecdate" -lt "$today"]]
+if [[ "$elecdate" -lt "$today" ]]
    then
    elecdate1="${orange}✗ $month $elecdate${reset}"
    elecprice="${orange}$elec${reset}"
@@ -114,7 +114,7 @@ if [["$elecdate" -lt "$today"]]
    elecprice="${green}$elec${reset}"
 fi
 
-if [["$waterdate" -lt "$today"]]
+if [[ "$waterdate" -lt "$today" ]]
    then
    waterdate1="${orange}✗ $month $waterdate${reset}"
    waterprice="${orange}$water${reset}"
@@ -123,7 +123,7 @@ if [["$waterdate" -lt "$today"]]
    waterprice="${green}$water${reset}"
 fi
 
-if [["$gasdate" -lt "$today"]]
+if [[ "$gasdate" -lt "$today" ]]
    then
    gasdate1="${orange}✗ $month $gasdate${reset}"
    gasprice="${orange}$gas${reset}"
@@ -132,7 +132,7 @@ if [["$gasdate" -lt "$today"]]
    gasprice="${green}$gas${reset}"
 fi
 
-if [["$sewerdate" -lt "$today"]]
+if [[ "$sewerdate" -lt "$today" ]]
    then
    sewerdate1="${orange}✗ $month $sewerdate${reset}"
    sewerprice="${orange}$sewer${reset}"
@@ -141,7 +141,7 @@ if [["$sewerdate" -lt "$today"]]
    sewerprice="${green}$sewer${reset}"
 fi
 
-if [["$trashdate" -lt "$today"]]
+if [[ "$trashdate" -lt "$today" ]]
    then
    trashdate1="${orange}✗ $month $trashdate${reset}"
    trashprice="${orange}$trash${reset}"
@@ -150,7 +150,7 @@ if [["$trashdate" -lt "$today"]]
    trashprice="${green}$trash${reset}"
 fi
 
-if [["$sigdate" -lt "$today"]]
+if [[ "$sigdate" -lt "$today" ]]
    then
    sigdate1="${orange}✗ $month $sigdate${reset}"
    sigprice="${orange}$signature${reset}"
@@ -159,7 +159,7 @@ if [["$sigdate" -lt "$today"]]
    sigprice="${green}$signature${reset}"
 fi
 
-if [["$titledate" -lt "$today"]]
+if [[ "$titledate" -lt "$today" ]]
    then
    titledate1="${orange}✗ $month $titledate${reset}"
    titleprice="${orange}$title${reset}"
@@ -168,7 +168,7 @@ if [["$titledate" -lt "$today"]]
    titleprice="${green}$title${reset}"
 fi
 
-if [["$citidate" -lt "$today"]]
+if [[ "$citidate" -lt "$today" ]]
    then
    citidate1="${orange}✗ $month $citidate${reset}"
    citiprice="${orange}$citi${reset}"
@@ -177,7 +177,7 @@ if [["$citidate" -lt "$today"]]
    citiprice="${green}$citi${reset}"
 fi
 
-if [["$barcdate" -lt "$today"]]
+if [[ "$barcdate" -lt "$today" ]]
    then
    barcdate1="${orange}✗ $month $barcdate${reset}"
    barcprice="${orange}$barclay${reset}"
@@ -186,7 +186,7 @@ if [["$barcdate" -lt "$today"]]
    barcprice="${green}$barclay${reset}"
 fi
 
-if [["$chasedate" -lt "$today"]]
+if [[ "$chasedate" -lt "$today" ]]
    then
    chasedate1="${orange}✗ $month $chasedate${reset}"
    chaseprice="${orange}$chase${reset}"

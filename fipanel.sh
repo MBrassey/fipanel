@@ -82,9 +82,9 @@ sewerdate="01"
 trashdate="09"
 sigdate="18"
 titledate="18"
-citidate="7"
-barcdate="8"
-chasedate="9"
+citidate="15"
+barcdate="28"
+chasedate="10"
 
 # [Green] make sure you've paid it [Orange] prepare to pay it
 if [["$mortdate" -lt "$today"]]

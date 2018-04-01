@@ -195,7 +195,7 @@ if [[ "$chasedate" -lt "$today" ]]
    chaseprice="${green}$chase${reset}"
 fi
 
-home1="${cyan}[ ${reset}${blue}Mortgage:${reset}${orange} $mortprice${reset}${cyan} ]────────────────────╼[ ${reset}$mortdate1${cyan} ]${reset}"
+home1="${cyan}[ ${reset}${blue}Mortgage:${reset}${orange} $mortprice${reset}${cyan} ]───────────────────╼[ ${reset}$mortdate1${cyan} ]${reset}"
 home2="${cyan}[ ${reset}${blue}HOA:${reset}${orange} $hoaprice${reset}${cyan} ]──────────────────────────╼[ ${reset}$hoadate1${cyan} ]${reset}"
 home3="${cyan}[ ${reset}${blue}Electric:${reset}${orange} $elecprice${reset}${cyan} ]────────────────────╼[ ${reset}$elecdate1${cyan} ]${reset}"
 home4="${cyan}[ ${reset}${blue}Water:${reset}${orange} $waterprice${reset}${cyan} ]───────────────────────╼[ ${reset}$waterdate1${cyan} ]${reset}"

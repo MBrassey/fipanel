@@ -71,6 +71,7 @@ title='220'
 citi='100'
 barclay='100'
 chase='100'
+khols='50'
 
 #Dates
 mortdate="02"
@@ -85,6 +86,7 @@ titledate="18"
 citidate="15"
 barcdate="28"
 chasedate="10"
+kholsdate="11"
 
 # [Green] make sure you've paid it [Orange] prepare to pay it
 if [[ "$mortdate" -lt "$today" ]]
@@ -195,6 +197,15 @@ if [[ "$chasedate" -lt "$today" ]]
    chaseprice="${green}$chase${reset}"
 fi
 
+if [[ "$kholsdate" -lt "$today" ]]
+   then
+   kholsdate1="${orange}✗ $month $kholsdate${reset}"
+   kholsprice="${orange}$khols${reset}"
+   else
+   kholsdate1="${green}✔ $month $kholsdate${reset}"
+   kholsprice="${green}$khols${reset}"
+fi
+
 home1="${cyan}[ ${reset}${blue}Mortgage:${reset}${orange} $mortprice${reset}${cyan} ]───────────────────╼[ ${reset}$mortdate1${cyan} ]${reset}"
 home2="${cyan}[ ${reset}${blue}HOA:${reset}${orange} $hoaprice${reset}${cyan} ]──────────────────────────╼[ ${reset}$hoadate1${cyan} ]${reset}"
 home3="${cyan}[ ${reset}${blue}Electric:${reset}${orange} $elecprice${reset}${cyan} ]────────────────────╼[ ${reset}$elecdate1${cyan} ]${reset}"
@@ -207,6 +218,7 @@ home9="${cyan}[ ${reset}${blue}Title:${reset}${orange} $titleprice${reset}${cyan
 home10="${cyan}[ ${reset}${blue}Citi:${reset}${orange} $titleprice${reset}${cyan} ]─────────────────────╼[ ${reset}$citidate1${cyan} ]${reset}"
 home11="${cyan}[ ${reset}${blue}Barclay:${reset}${orange} $barcprice${reset}${cyan} ]───────────────────╼[ ${reset}$barcdate1${cyan} ]${reset}"
 home12="${cyan}[ ${reset}${blue}Chase:${reset}${orange} $chaseprice${reset}${cyan} ]──────────────────────╼[ ${reset}$chasedate1${cyan} ]${reset}"
+home13="${cyan}[ ${reset}${blue}Khols:${reset}${orange} $kholsprice${reset}${cyan} ]────────────────────────╼[ ${reset}$kholsdate1${cyan} ]${reset}"
 IFS='
 '
 
@@ -235,7 +247,7 @@ function panel() {
        /__________/      \    \  /            '$home10'
        \   _____  \      /_____\/            '$home11'
         \ /    /\  \    /   \  \ \          '$home12'
-         /____/  \  \  /     \  \ \
+         /____/  \  \  /     \  \ \        '$home13'
          \    \  /___\/       \  \ \
           \____\/              \__\/
         '

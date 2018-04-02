@@ -73,25 +73,27 @@ barclay='100'
 chase='100'
 khols='50'
 internet='55'
+phone='70'
 
 #Dates
-mortdate="02"
-hoadate="02"
+mortdate="2 "
+hoadate="2 "
 elecdate="15"
 waterdate="12"
 gasdate="28"
-sewerdate="01"
-trashdate="09"
+sewerdate="1 "
+trashdate="9 "
 sigdate="18"
 titledate="18"
 citidate="15"
 barcdate="28"
 chasedate="10"
 kholsdate="11"
-interdate="1"
+interdate="1 "
+phonedate="25"
 
 # [Green] make sure you've paid it [Orange] prepare to pay it
-if [[ "$mortdate" -lt "$today" ]]
+if [[ "$mortdate" -gt "$today" ]]
    then
    mortdate1="${orange}✗ $month $mortdate${reset}"
    mortprice="${orange}$mortgage$(reset)"
@@ -100,7 +102,7 @@ if [[ "$mortdate" -lt "$today" ]]
    mortprice="${green}$mortgage${reset}"
 fi
 
-if [[ "$hoadate" -lt "$today" ]]
+if [[ "$hoadate" -gt "$today" ]]
    then
    hoadate1="${orange}✗ $month $hoadate${reset}"
    hoaprice="${orange}$hoa${reset}"
@@ -109,7 +111,7 @@ if [[ "$hoadate" -lt "$today" ]]
    hoaprice="${green}$hoa${reset}"
 fi
 
-if [[ "$elecdate" -lt "$today" ]]
+if [[ "$elecdate" -gt "$today" ]]
    then
    elecdate1="${orange}✗ $month $elecdate${reset}"
    elecprice="${orange}$elec${reset}"
@@ -118,7 +120,7 @@ if [[ "$elecdate" -lt "$today" ]]
    elecprice="${green}$elec${reset}"
 fi
 
-if [[ "$waterdate" -lt "$today" ]]
+if [[ "$waterdate" -gt "$today" ]]
    then
    waterdate1="${orange}✗ $month $waterdate${reset}"
    waterprice="${orange}$water${reset}"
@@ -127,7 +129,7 @@ if [[ "$waterdate" -lt "$today" ]]
    waterprice="${green}$water${reset}"
 fi
 
-if [[ "$gasdate" -lt "$today" ]]
+if [[ "$gasdate" -gt "$today" ]]
    then
    gasdate1="${orange}✗ $month $gasdate${reset}"
    gasprice="${orange}$gas${reset}"
@@ -136,7 +138,7 @@ if [[ "$gasdate" -lt "$today" ]]
    gasprice="${green}$gas${reset}"
 fi
 
-if [[ "$sewerdate" -lt "$today" ]]
+if [[ "$sewerdate" -gt "$today" ]]
    then
    sewerdate1="${orange}✗ $month $sewerdate${reset}"
    sewerprice="${orange}$sewer${reset}"
@@ -145,7 +147,7 @@ if [[ "$sewerdate" -lt "$today" ]]
    sewerprice="${green}$sewer${reset}"
 fi
 
-if [[ "$trashdate" -lt "$today" ]]
+if [[ "$trashdate" -gt "$today" ]]
    then
    trashdate1="${orange}✗ $month $trashdate${reset}"
    trashprice="${orange}$trash${reset}"
@@ -154,7 +156,7 @@ if [[ "$trashdate" -lt "$today" ]]
    trashprice="${green}$trash${reset}"
 fi
 
-if [[ "$sigdate" -lt "$today" ]]
+if [[ "$sigdate" -gt "$today" ]]
    then
    sigdate1="${orange}✗ $month $sigdate${reset}"
    sigprice="${orange}$signature${reset}"
@@ -163,7 +165,7 @@ if [[ "$sigdate" -lt "$today" ]]
    sigprice="${green}$signature${reset}"
 fi
 
-if [[ "$titledate" -lt "$today" ]]
+if [[ "$titledate" -gt "$today" ]]
    then
    titledate1="${orange}✗ $month $titledate${reset}"
    titleprice="${orange}$title${reset}"
@@ -172,7 +174,7 @@ if [[ "$titledate" -lt "$today" ]]
    titleprice="${green}$title${reset}"
 fi
 
-if [[ "$citidate" -lt "$today" ]]
+if [[ "$citidate" -gt "$today" ]]
    then
    citidate1="${orange}✗ $month $citidate${reset}"
    citiprice="${orange}$citi${reset}"
@@ -181,7 +183,7 @@ if [[ "$citidate" -lt "$today" ]]
    citiprice="${green}$citi${reset}"
 fi
 
-if [[ "$barcdate" -lt "$today" ]]
+if [[ "$barcdate" -gt "$today" ]]
    then
    barcdate1="${orange}✗ $month $barcdate${reset}"
    barcprice="${orange}$barclay${reset}"
@@ -190,7 +192,7 @@ if [[ "$barcdate" -lt "$today" ]]
    barcprice="${green}$barclay${reset}"
 fi
 
-if [[ "$chasedate" -lt "$today" ]]
+if [[ "$chasedate" -gt "$today" ]]
    then
    chasedate1="${orange}✗ $month $chasedate${reset}"
    chaseprice="${orange}$chase${reset}"
@@ -199,7 +201,7 @@ if [[ "$chasedate" -lt "$today" ]]
    chaseprice="${green}$chase${reset}"
 fi
 
-if [[ "$kholsdate" -lt "$today" ]]
+if [[ "$kholsdate" -gt "$today" ]]
    then
    kholsdate1="${orange}✗ $month $kholsdate${reset}"
    kholsprice="${orange}$khols${reset}"
@@ -208,7 +210,7 @@ if [[ "$kholsdate" -lt "$today" ]]
    kholsprice="${green}$khols${reset}"
 fi
 
-if [[ "$innterdate" -lt "$today" ]]
+if [[ "$innterdate" -gt "$today" ]]
    then
    interdate1="${orange}✗ $month $interdate${reset}"
    interprice="${orange}$internet${reset}"
@@ -217,20 +219,43 @@ if [[ "$innterdate" -lt "$today" ]]
    interprice="${green}$internet${reset}"
 fi
 
-home1="${cyan}[ ${reset}${blue}Mortgage:${reset}${orange} $mortprice${reset}${cyan} ]───────────────────╼[ ${reset}$mortdate1${cyan} ]${reset}"
-home2="${cyan}[ ${reset}${blue}HOA:${reset}${orange} $hoaprice${reset}${cyan} ]──────────────────────────╼[ ${reset}$hoadate1${cyan} ]${reset}"
-home3="${cyan}[ ${reset}${blue}Electric:${reset}${orange} $elecprice${reset}${cyan} ]────────────────────╼[ ${reset}$elecdate1${cyan} ]${reset}"
-home4="${cyan}[ ${reset}${blue}Water:${reset}${orange} $waterprice${reset}${cyan} ]───────────────────────╼[ ${reset}$waterdate1${cyan} ]${reset}"
-home5="${cyan}[ ${reset}${blue}Gas:${reset}${orange} $gasprice${reset}${cyan} ]────────────────────────╼[ ${reset}$gasdate1${cyan} ]${reset}"
-home6="${cyan}[ ${reset}${blue}Sewer:${reset}${orange} $sewerprice${reset}${cyan} ]─────────────────────╼[ ${reset}$sewerdate1${cyan} ]${reset}"
-home7="${cyan}[ ${reset}${blue}Trash:${reset}${orange} $trashprice${reset}${cyan} ]─────────────────────╼[ ${reset}$trashdate1${cyan} ]${reset}"
-home8="${cyan}[ ${reset}${blue}Signature:${reset}${orange} $sigprice${reset}${cyan} ]────────────╼[ ${reset}$sigdate1${cyan} ]${reset}"
-home9="${cyan}[ ${reset}${blue}Title:${reset}${orange} $titleprice${reset}${cyan} ]─────────────────╼[ ${reset}$titledate1${cyan} ]${reset}"
-home10="${cyan}[ ${reset}${blue}Citi:${reset}${orange} $titleprice${reset}${cyan} ]─────────────────────╼[ ${reset}$citidate1${cyan} ]${reset}"
-home11="${cyan}[ ${reset}${blue}Barclay:${reset}${orange} $barcprice${reset}${cyan} ]───────────────────╼[ ${reset}$barcdate1${cyan} ]${reset}"
-home12="${cyan}[ ${reset}${blue}Chase:${reset}${orange} $chaseprice${reset}${cyan} ]──────────────────────╼[ ${reset}$chasedate1${cyan} ]${reset}"
-home13="${cyan}[ ${reset}${blue}Khols:${reset}${orange} $kholsprice${reset}${cyan} ]────────────────────────╼[ ${reset}$kholsdate1${cyan} ]${reset}"
-home14="${cyan}[ ${reset}${blue}Internet:${reset}${orange} $interprice${reset}${cyan} ]─────────────────────────╼[ ${reset}$interdate1${cyan} ]${reset}"
+if [[ "$phonedate" -gt "$today" ]]
+   then
+   phonedate1="${orange}✗ $month $phonedate${reset}"
+   phoneprice="${orange}$phonenet${reset}"
+   else
+   phonedate1="${green}✔ $month $phonedate${reset}"
+   phoneprice="${green}$phone${reset}"
+fi
+
+#Left Side
+lefthome="${purple}Home:${reset}"
+left1="${cyan}[ ${reset}${blue}Mortgage:${reset}${orange} $mortprice${reset}${cyan} ]────────────────╼[ ${reset}$mortdate1${cyan} ]${reset} •"
+left2="${cyan}[ ${reset}${blue}HOA:${reset}${orange} $hoaprice${reset}${cyan} ]───────────────────────╼[ ${reset}$hoadate1${cyan} ]${reset} •"
+left3="${cyan}[ ${reset}${blue}Electric:${reset}${orange} $elecprice${reset}${cyan} ]─────────────────╼[ ${reset}$elecdate1${cyan} ]${reset} •"
+left4="${cyan}[ ${reset}${blue}Water:${reset}${orange} $waterprice${reset}${cyan} ]────────────────────╼[ ${reset}$waterdate1${cyan} ]${reset} •"
+left5="${cyan}[ ${reset}${blue}Gas:${reset}${orange} $gasprice${reset}${cyan} ]─────────────────────╼[ ${reset}$gasdate1${cyan} ]${reset} •"
+left6="${cyan}[ ${reset}${blue}Sewer:${reset}${orange} $sewerprice${reset}${cyan} ]──────────────────╼[ ${reset}$sewerdate1${cyan} ]${reset} •"
+left7="${cyan}[ ${reset}${blue}Trash:${reset}${orange} $trashprice${reset}${cyan} ]──────────────────╼[ ${reset}$trashdate1${cyan} ]${reset} •"
+blank1="                                           •"
+leftloans="${purple}Loans:${reset}                                    •"
+left8="${cyan}[ ${reset}${blue}Signature:${reset}${orange} $sigprice${reset}${cyan} ]─────────╼[ ${reset}$sigdate1${cyan} ]${reset} •"
+leftcredit="${purple}Credit:${reset}                               •"
+left9="${cyan}[ ${reset}${blue}Title:${reset}${orange} $titleprice${reset}${cyan} ]────────────╼[ ${reset}$titledate1${cyan} ]${reset} •"
+blank2="                                       •"
+left10="${cyan}[ ${reset}${blue}Citi:${reset}${orange} $titleprice${reset}${cyan} ]──────────╼[ ${reset}$citidate1${cyan} ]${reset} •"
+left11="${cyan}[ ${reset}${blue}Barclay:${reset}${orange} $barcprice${reset}${cyan} ]──────╼[ ${reset}$barcdate1${cyan} ]${reset} •"
+left12="${cyan}[ ${reset}${blue}Chase:${reset}${orange} $chaseprice${reset}${cyan} ]───────╼[ ${reset}$chasedate1${cyan} ]${reset} •"
+left13="${cyan}[ ${reset}${blue}Khols:${reset}${orange} $kholsprice${reset}${cyan} ]───────╼[ ${reset}$kholsdate1${cyan} ]${reset} •"
+blank3="                                 •"
+leftservices="${purple}Services:${reset}                       •"
+left14="${cyan}[ ${reset}${blue}Internet:${reset}${orange} $interprice${reset}${cyan} ]─╼[ ${reset}$interdate1${cyan} ]${reset} •"
+left15="${cyan}[ ${reset}${blue}Phone:${reset}${orange} $interprice${reset}${cyan} ]───╼[ ${reset}$interdate1${cyan} ]${reset} •"
+blank4="                             •"
+blank5="                            •"
+#Right Side
+
+
 IFS='
 '
 
@@ -238,39 +263,38 @@ IFS='
 function panel() {
        start=$SECONDS
        clear
-#       echo "$header"
        echo ""
-       echo ' 
-              ___        ______
-             /__/\   ___/_____/\        '${purple}Home:${reset}'
-             \  \ \ /         /\\        '$home1'
-              \  \ \____     /  \         '$home2'
-            ___\  \ \  /\___/___ \         '$home3'
-           /  / \__\/ /  \     /\ \         '$home4'
-      ____/  /_______/    \   / _\/_____     '$home5' 
-     /   /   \       \    /  / /       /\     '$home6'
-  __/   /     \       \  /  / /       / _\__   '$home7'
- / /   /       \_______\/  / /       / /   /\   
-/_/___/___________________/ /_______/ /___/  \   '${purple}Loans:${reset}'
-\ \   \    ___________    \ \       \ \   \  /    '$home8'
- \_\   \  /          /\    \ \       \ \___\/    '$home9'
-    \   \/          /  \    \ \       \  /      
-     \__/          /    \    \ \_______\/      '${purple}Credit:${reset}'
-       /__________/      \    \  /            '$home10'
-       \   _____  \      /_____\/            '$home11'
-        \ /    /\  \    /   \  \ \          '$home12'
-         /____/  \  \  /     \  \ \        '$home13'
-         \    \  /___\/       \  \ \      
-          \____\/              \__\/     '${purple}Services:${reset}'
-                                        '$home14'
-'
-       echo ""
+echo '
+'$lefthome'  
+'$left1'
+'$left2'
+'$left3'
+'$left4'
+'$left5'
+'$left6'
+'$left7' 
+'$blank1'
+'$leftloans'
+'$left8'
+'$left9'
+'$blank2'  
+'$leftcredit'
+'$left10'
+'$left11'
+'$left12'
+'$left13'
+'$blank3'      
+'$leftservices'
+'$left14'
+'$left15'
+'$blank4'
+'$blank5''
 
 #Sleep sequence
        completed
        secs=$((minutes * 60))
        while [ $secs -gt 0 ]; do
-          echo -ne "${blue}╰────╼${reset}${green} Re-launch in:${reset} ${cyan}$secs\\033[0Ks    \\r${reset}"
+          echo -ne "${blue}╰────╼${reset}${green} Re-launch in:${reset} ${cyan}$secs\\033[0Ks  •    \\r${reset}"
           sleep 1
           : $((secs--))
        done
@@ -278,7 +302,7 @@ function panel() {
 
 function completed(){
       duration=$(( SECONDS - start ))
-      echo "${blue}╭────╼${reset}${purple} Completed in: ${reset}${cyan}$duration${reset}${cyan}s${reset}"
+      echo "${blue}╭────╼${reset}${purple} Completed in: ${reset}${cyan}$duration${reset}${cyan}s${reset}    •"
 }
 
 #Arguments

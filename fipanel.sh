@@ -294,7 +294,7 @@ echo '
        completed
        secs=$((minutes * 60))
        while [ $secs -gt 0 ]; do
-          echo -ne "${blue}╰────╼${reset}${green} Re-launch in:${reset} ${cyan}$secs\\033[0Ks  •    \\r${reset}"
+          echo -ne "${blue}╰────╼${reset}${green} Re-launch in:${reset} ${cyan}$secs\\033[0Ks    \\r${reset}"
           sleep 1
           : $((secs--))
        done

@@ -77,6 +77,9 @@ phone='70'
 food='470'
 hule='66'
 berg='45'
+health='99'
+cleaning='27'
+juice='30'
 
 #Dates
 mortdate="2 "
@@ -97,6 +100,9 @@ phonedate="25"
 fooddate="30"
 huledate="2 "
 bergdate="26"
+healthdate="26"
+cleaningdate="26"
+juicedate="18"
 
 # [Green] make sure you've paid it [Orange] prepare to pay it
 if [[ "$mortdate" -gt "$today" ]]
@@ -261,37 +267,67 @@ if [[ "$bergdate" -gt "$today" ]]
    bergprice="${green}$berg${reset}"
 fi
 
+if [[ "$healthdate" -gt "$today" ]]
+   then
+   healthdate1="${orange}✗ $month $healthdate${reset}"
+   healthprice="${orange}$health${reset}"
+   else
+   healthdate1="${green}✔ $month $healthdate${reset}"
+   healthprice="${green}$health${reset}"
+fi
+
+if [[ "$cleaningdate" -gt "$today" ]]
+   then
+   cleaningdate1="${orange}✗ $month $cleaningdate${reset}"
+   cleaningprice="${orange}$cleaning${reset}"
+   else
+   cleaningdate1="${green}✔ $month $cleaningdate${reset}"
+   cleaningprice="${green}$cleaning${reset}"
+fi
+
+if [[ "$juicedate" -gt "$today" ]]
+   then
+   juicedate1="${orange}✗ $month $juicedate${reset}"
+   juiceprice="${orange}$juice${reset}"
+   else
+   juicedate1="${green}✔ $month $juicedate${reset}"
+   juiceprice="${green}$juice${reset}"
+fi
+
 #Left Side
 lefthome="${purple}Home:${reset}"
-left1="${cyan}[ ${reset}${blue}Mortgage:${reset}${orange} $mortprice${reset}${cyan} ]────────────────╼[ ${reset}$mortdate1${cyan} ]${reset} • "
-left2="${cyan}[ ${reset}${blue}HOA:${reset}${orange} $hoaprice${reset}${cyan} ]───────────────────────╼[ ${reset}$hoadate1${cyan} ]${reset} • "
-left3="${cyan}[ ${reset}${blue}Electric:${reset}${orange} $elecprice${reset}${cyan} ]─────────────────╼[ ${reset}$elecdate1${cyan} ]${reset} • "
-left4="${cyan}[ ${reset}${blue}Water:${reset}${orange} $waterprice${reset}${cyan} ]────────────────────╼[ ${reset}$waterdate1${cyan} ]${reset} • "
-left5="${cyan}[ ${reset}${blue}Gas:${reset}${orange} $gasprice${reset}${cyan} ]─────────────────────╼[ ${reset}$gasdate1${cyan} ]${reset} • "
-left6="${cyan}[ ${reset}${blue}Sewer:${reset}${orange} $sewerprice${reset}${cyan} ]──────────────────╼[ ${reset}$sewerdate1${cyan} ]${reset} • "
-left7="${cyan}[ ${reset}${blue}Trash:${reset}${orange} $trashprice${reset}${cyan} ]──────────────────╼[ ${reset}$trashdate1${cyan} ]${reset} • "
+left1="${cyan}[ ${reset}${blue}Mortgage:${reset} $mortprice${cyan} ]────────────────╼[ ${reset}$mortdate1${cyan} ]${reset} • "
+left2="${cyan}[ ${reset}${blue}HOA:${reset} $hoaprice${cyan} ]───────────────────────╼[ ${reset}$hoadate1${cyan} ]${reset} • "
+left3="${cyan}[ ${reset}${blue}Electric:${reset} $elecprice${cyan} ]─────────────────╼[ ${reset}$elecdate1${cyan} ]${reset} • "
+left4="${cyan}[ ${reset}${blue}Water:${reset} $waterprice${cyan} ]────────────────────╼[ ${reset}$waterdate1${cyan} ]${reset} • "
+left5="${cyan}[ ${reset}${blue}Gas:${reset} $gasprice${cyan} ]─────────────────────╼[ ${reset}$gasdate1${cyan} ]${reset} • "
+left6="${cyan}[ ${reset}${blue}Sewer:${reset} $sewerprice${cyan} ]──────────────────╼[ ${reset}$sewerdate1${cyan} ]${reset} • "
+left7="${cyan}[ ${reset}${blue}Trash:${reset} $trashprice${cyan} ]──────────────────╼[ ${reset}$trashdate1${cyan} ]${reset} • "
 blank1="                                           • "
 leftloans="${purple}Loans:${reset}                                    • "
-left8="${cyan}[ ${reset}${blue}Signature:${reset}${orange} $sigprice${reset}${cyan} ]─────────╼[ ${reset}$sigdate1${cyan} ]${reset} • "
+left8="${cyan}[ ${reset}${blue}Signature:${reset} $sigprice${cyan} ]─────────╼[ ${reset}$sigdate1${cyan} ]${reset} • "
 leftcredit="${purple}Credit:${reset}                               • "
-left9="${cyan}[ ${reset}${blue}Title:${reset}${orange} $titleprice${reset}${cyan} ]────────────╼[ ${reset}$titledate1${cyan} ]${reset} • "
+left9="${cyan}[ ${reset}${blue}Title:${reset} $titleprice${cyan} ]────────────╼[ ${reset}$titledate1${cyan} ]${reset} • "
 blank2="                                       • "
-left10="${cyan}[ ${reset}${blue}Citi:${reset}${orange} $titleprice${reset}${cyan} ]──────────╼[ ${reset}$citidate1${cyan} ]${reset} • "
-left11="${cyan}[ ${reset}${blue}Barclay:${reset}${orange} $barcprice${reset}${cyan} ]──────╼[ ${reset}$barcdate1${cyan} ]${reset} • "
-left12="${cyan}[ ${reset}${blue}Chase:${reset}${orange} $chaseprice${reset}${cyan} ]───────╼[ ${reset}$chasedate1${cyan} ]${reset} • "
-left13="${cyan}[ ${reset}${blue}Khols:${reset}${orange} $kholsprice${reset}${cyan} ]───────╼[ ${reset}$kholsdate1${cyan} ]${reset} • "
+left10="${cyan}[ ${reset}${blue}Citi:${reset} $titleprice${cyan} ]──────────╼[ ${reset}$citidate1${cyan} ]${reset} • "
+left11="${cyan}[ ${reset}${blue}Barclay:${reset} $barcprice${cyan} ]──────╼[ ${reset}$barcdate1${cyan} ]${reset} • "
+left12="${cyan}[ ${reset}${blue}Chase:${reset} $chaseprice${cyan} ]───────╼[ ${reset}$chasedate1${cyan} ]${reset} • "
+left13="${cyan}[ ${reset}${blue}Khols:${reset} $kholsprice${cyan} ]───────╼[ ${reset}$kholsdate1${cyan} ]${reset} • "
 blank3="                                 • "
 leftservices="${purple}Services:${reset}                       • "
-left14="${cyan}[ ${reset}${blue}Internet:${reset}${orange} $interprice${reset}${cyan} ]─╼[ ${reset}$interdate1${cyan} ]${reset} • "
-left15="${cyan}[ ${reset}${blue}Phone:${reset}${orange} $interprice${reset}${cyan} ]───╼[ ${reset}$interdate1${cyan} ]${reset} • "
+left14="${cyan}[ ${reset}${blue}Internet:${reset} $interprice${cyan} ]─╼[ ${reset}$interdate1${cyan} ]${reset} • "
+left15="${cyan}[ ${reset}${blue}Phone:${reset} $interprice${cyan} ]───╼[ ${reset}$interdate1${cyan} ]${reset} • "
 blank4="                             • "
 blank5="                            • "
 #Right Side
 rightgroceries="                                                                   ${purple}Groceries:${reset}"
-right1="${cyan}[ ${reset}${blue}Food:${reset}${orange} $foodprice${reset}${cyan} ]────╼[ ${reset}$fooddate1${cyan} ]${reset}"
-right2="${cyan}[ ${reset}${blue}Hule:${reset}${orange} $huleprice${reset}${cyan} ]──────╼[ ${reset}$huledate1${cyan} ]${reset}"
-right3="${cyan}[ ${reset}${blue}Dr. Berg:${reset}${orange} $bergprice${reset}${cyan} ]───╼[ ${reset}$bergdate1${cyan} ]${reset}"
-right4="${cyan}[ ${reset}${blue}Supplements:${reset}${orange} $interprice${reset}${cyan} ]─╼[ ${reset}$interdate1${cyan} ]${reset}"
+right1="${cyan}[ ${reset}$fooddate1${cyan} ]────╼[ ${reset}${blue}Food:${reset} $foodprice${cyan} ]${reset}"
+right2="${cyan}[ ${reset}$huledate1${cyan} ]──────╼[ ${reset}${blue}Hule:${reset} $huleprice${cyan} ]${reset}"
+right3="${cyan}[ ${reset}$bergdate1${cyan} ]─────╼[ ${reset}${blue}DrBerg:${reset}${orange} $bergprice${reset}${cyan} ]${reset}"
+right4="${cyan}[ ${reset}$healthdate1${cyan} ]──────╼[ ${reset}${blue}Health:${reset} $healthprice${cyan} ]${reset}"
+right5="${cyan}[ ${reset}$cleaningdate1${cyan} ]─────╼[ ${reset}${blue}Cleaning:${reset} $cleaningprice${cyan} ]${reset}"
+rightgoingout="                          ${purple}Going out:${reset}"
+right6="${cyan}[ ${reset}$juicedate1${cyan} ]──────╼[ ${reset}${blue}BoiseJuice:${reset} $juiceprice${cyan} ]${reset}"
 
 
 IFS='
@@ -308,10 +344,10 @@ echo '
 '$left2''$right2'
 '$left3''$right3'
 '$left4''$right4'
-'$left5'
+'$left5''$right5'
 '$left6'
-'$left7' 
-'$blank1'
+'$left7''$rightgoingout' 
+'$blank1''$right6'
 '$leftloans'
 '$left8'
 '$left9'

@@ -83,6 +83,10 @@ juice='30'
 coop='20'
 subway='20'
 chip='20'
+items='30'
+med='650'
+gym="25"
+unexpected="100"
 
 #Dates
 mortdate="2 "
@@ -109,6 +113,10 @@ juicedate="18"
 coopdate="18"
 subwaydate="18"
 chipdate="18"
+itemsdate="18"
+meddate="18"
+gymdate="5 "
+unexpecteddate="30"
 
 # [Green] make sure you've paid it [Orange] prepare to pay it
 if [[ "$mortdate" -gt "$today" ]]
@@ -327,6 +335,42 @@ if [[ "$chipdate" -gt "$today" ]]
    chipprice="${green}$chip${reset}"
 fi
 
+if [[ "$itemsdate" -gt "$today" ]]
+   then
+   itemsdate1="${orange}✗ $month $itemsdate${reset}"
+   itemsprice="${orange}$items${reset}"
+   else
+   itemsdate1="${green}✔ $month $itemsdate${reset}"
+   itemsprice="${green}$items${reset}"
+fi
+
+if [[ "$meddate" -gt "$today" ]]
+   then
+   meddate1="${orange}✗ $month $meddate${reset}"
+   medprice="${orange}$med${reset}"
+   else
+   meddate1="${green}✔ $month $meddate${reset}"
+   medprice="${green}$med${reset}"
+fi
+
+if [[ "$gymdate" -gt "$today" ]]
+   then
+   gymdate1="${orange}✗ $month $gymdate${reset}"
+   gymprice="${orange}$gym${reset}"
+   else
+   gymdate1="${green}✔ $month $gymdate${reset}"
+   gymprice="${green}$gym${reset}"
+fi
+
+if [[ "$unexpecteddate" -gt "$today" ]]
+   then
+   unexpecteddate1="${orange}✗ $month $unexpecteddate${reset}"
+   unexpectedprice="${orange}$unexpected${reset}"
+   else
+   unexpecteddate1="${green}✔ $month $unexpecteddate${reset}"
+   unexpectedprice="${green}$unexpected${reset}"
+fi
+
 #Left Side
 lefthome="${purple}Home:${reset}"
 left1="${cyan}[ ${reset}${blue}Mortgage:${reset} $mortprice${cyan} ]────────────────╼[ ${reset}$mortdate1${cyan} ]${reset} • "
@@ -364,6 +408,17 @@ right6="${cyan}[ ${reset}$juicedate1${cyan} ]──────╼[ ${reset}${bl
 right7="${cyan}[ ${reset}$coopdate1${cyan} ]───────╼[ ${reset}${blue}Co-op_Deli:${reset} $coopprice${cyan} ]${reset}"
 right8="${cyan}[ ${reset}$subwaydate1${cyan} ]────────────╼[ ${reset}${blue}Subway:${reset} $subwayprice${cyan} ]${reset}"
 right9="${cyan}[ ${reset}$chipdate1${cyan} ]───────────╼[ ${reset}${blue}Chipotle:${reset} $chipprice${cyan} ]${reset}"
+rightother="                                    ${purple}Other:${reset}"
+right10="${cyan}[ ${reset}$itemsdate1${cyan} ]──────────────╼[ ${reset}${blue}NewItems:${reset} $itemsprice${cyan} ]${reset}"
+right11="${cyan}[ ${reset}$meddate1${cyan} ]──────────────╼[ ${reset}${blue}Medicine:${reset} $medprice${cyan} ]${reset}"
+right12="${cyan}[ ${reset}$gymdate1${cyan} ]─────────────────────╼[ ${reset}${blue}Gym:${reset} $gymprice${cyan} ]${reset}"
+right13="${cyan}[ ${reset}$unexpecteddate1${cyan} ]──────────────╼[ ${reset}${blue}Unexpected:${reset} $unexpectedprice${cyan} ]${reset}"
+rightbox1="${purple} ______________________________________________ ${reset}"
+rightbox2="${purple} /                                              | ${reset}"
+rightbox3="${purple} /                                               | ${reset}"
+rightbox4="${purple} /                                                | ${reset}"
+rightbox5="${purple} /                                                 | ${reset}"
+rightbox6="${purple} /__________________________________________________| ${reset}"
 
 
 IFS='
@@ -387,19 +442,18 @@ echo '
 '$leftloans''$right7'
 '$left8''$right8'
 '$left9''$right9'
-'$blank2'  
-'$leftcredit'
-'$left10'
-'$left11'
-'$left12'
-'$left13'
+'$blank2' 
+'$leftcredit''$rightother'
+'$left10''$right10'
+'$left11''$right11'
+'$left12''$right12'
+'$left13''$right13'
 '$blank3'      
-'$leftservices'
-'$left14'
-'$left15'
-'$blank4'
-'$blank5''
-
+'$leftservices''$rightbox1'
+'$left14''$rightbox2'
+'$left15''$rightbox3'
+'$blank4''$rightbox4'
+'$blank5''$rightbox5''
 #Sleep sequence
        completed
        secs=$((minutes * 60))
@@ -412,7 +466,7 @@ echo '
 
 function completed(){
       duration=$(( SECONDS - start ))
-      echo "${blue}╭────╼${reset}${purple} Completed in: ${reset}${cyan}$duration${reset}${cyan}s${reset}    •"
+      echo "${blue}╭────╼${reset}${purple} Completed in: ${reset}${cyan}$duration${reset}${cyan}s${reset}    • ${purple} /__________________________________________________| ${reset}"
 }
 
 #Arguments

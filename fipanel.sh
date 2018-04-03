@@ -80,6 +80,9 @@ berg='45'
 health='99'
 cleaning='27'
 juice='30'
+coop='20'
+subway='20'
+chip='20'
 
 #Dates
 mortdate="2 "
@@ -103,6 +106,9 @@ bergdate="26"
 healthdate="26"
 cleaningdate="26"
 juicedate="18"
+coopdate="18"
+subwaydate="18"
+chipdate="18"
 
 # [Green] make sure you've paid it [Orange] prepare to pay it
 if [[ "$mortdate" -gt "$today" ]]
@@ -294,6 +300,33 @@ if [[ "$juicedate" -gt "$today" ]]
    juiceprice="${green}$juice${reset}"
 fi
 
+if [[ "$coopdate" -gt "$today" ]]
+   then
+   coopdate1="${orange}✗ $month $coopdate${reset}"
+   coopprice="${orange}$coop${reset}"
+   else
+   coopdate1="${green}✔ $month $coopdate${reset}"
+   coopprice="${green}$coop${reset}"
+fi
+
+if [[ "$subwaydate" -gt "$today" ]]
+   then
+   subwaydate1="${orange}✗ $month $subwaydate${reset}"
+   subwayprice="${orange}$subway${reset}"
+   else
+   subwaydate1="${green}✔ $month $subwaydate${reset}"
+   subwayprice="${green}$subway${reset}"
+fi
+
+if [[ "$chipdate" -gt "$today" ]]
+   then
+   chipdate1="${orange}✗ $month $chipdate${reset}"
+   chipprice="${orange}$chip${reset}"
+   else
+   chipdate1="${green}✔ $month $chipdate${reset}"
+   chipprice="${green}$chip${reset}"
+fi
+
 #Left Side
 lefthome="${purple}Home:${reset}"
 left1="${cyan}[ ${reset}${blue}Mortgage:${reset} $mortprice${cyan} ]────────────────╼[ ${reset}$mortdate1${cyan} ]${reset} • "
@@ -328,6 +361,9 @@ right4="${cyan}[ ${reset}$healthdate1${cyan} ]──────╼[ ${reset}${b
 right5="${cyan}[ ${reset}$cleaningdate1${cyan} ]─────╼[ ${reset}${blue}Cleaning:${reset} $cleaningprice${cyan} ]${reset}"
 rightgoingout="                          ${purple}Going out:${reset}"
 right6="${cyan}[ ${reset}$juicedate1${cyan} ]──────╼[ ${reset}${blue}BoiseJuice:${reset} $juiceprice${cyan} ]${reset}"
+right7="${cyan}[ ${reset}$coopdate1${cyan} ]───────╼[ ${reset}${blue}Co-op_Deli:${reset} $coopprice${cyan} ]${reset}"
+right8="${cyan}[ ${reset}$subwaydate1${cyan} ]────────────╼[ ${reset}${blue}Subway:${reset} $subwayprice${cyan} ]${reset}"
+right9="${cyan}[ ${reset}$chipdate1${cyan} ]───────────╼[ ${reset}${blue}Chipotle:${reset} $chipprice${cyan} ]${reset}"
 
 
 IFS='
@@ -348,9 +384,9 @@ echo '
 '$left6'
 '$left7''$rightgoingout' 
 '$blank1''$right6'
-'$leftloans'
-'$left8'
-'$left9'
+'$leftloans''$right7'
+'$left8''$right8'
+'$left9''$right9'
 '$blank2'  
 '$leftcredit'
 '$left10'

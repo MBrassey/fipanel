@@ -408,7 +408,7 @@ remain=$(( $total - $paid ))
 
 #Left Side
 lefthome="${purple}Home:${reset}"
-left1="${cyan}[ ${reset}${blue}Mortgage:${reset} $mortprice${cyan} ]────────────────╼[ ${reset}$mortdate1${cyan} ]${reset} $dot "
+left1="${cyan}[ ${reset}${blue}Mortgage:${reset} $mortprice${cyan} ]──────────────────╼[ ${reset}$mortdate1${cyan} ]${reset} $dot "
 left2="${cyan}[ ${reset}${blue}HOA:${reset} $hoaprice${cyan} ]───────────────────────╼[ ${reset}$hoadate1${cyan} ]${reset} $dot "
 left3="${cyan}[ ${reset}${blue}Electric:${reset} $elecprice${cyan} ]─────────────────╼[ ${reset}$elecdate1${cyan} ]${reset} $dot "
 left4="${cyan}[ ${reset}${blue}Water:${reset} $waterprice${cyan} ]────────────────────╼[ ${reset}$waterdate1${cyan} ]${reset} $dot "
@@ -448,12 +448,12 @@ right10="${cyan}[ ${reset}$itemsdate1${cyan} ]───────────�
 right11="${cyan}[ ${reset}$meddate1${cyan} ]──────────────╼[ ${reset}${blue}Medicine:${reset} $medprice${cyan} ]${reset}"
 right12="${cyan}[ ${reset}$gymdate1${cyan} ]─────────────────────╼[ ${reset}${blue}Gym:${reset} $gymprice${cyan} ]${reset}"
 right13="${cyan}[ ${reset}$unexpecteddate1${cyan} ]──────────────╼[ ${reset}${blue}Unexpected:${reset} $unexpectedprice${cyan} ]${reset}"
-box3="${cyan}$"${green}$paid${reset}" paid in $month${reset}"
-box4="${cyan}$"${red}$remain${reset}" remaining in $month${reset}"
+box3="${cyan}$"${green}$paid${reset}"${cyan} paid ${reset}"
+box4="${cyan}$"${red}$remain${reset}"${cyan} remaining ${reset}"
 rightbox1="${purple} ______________________________________________ ${reset}"
 rightbox2="${purple} /                                              | ${reset}"
-rightbox3="${purple} /              $box3                ${purple}| ${reset}"
-rightbox4="${purple} /              $box4           ${purple} | ${reset}"
+rightbox3="${purple} /              $box3                      ${purple}| ${reset}"
+rightbox4="${purple} /              $box4                 ${purple} | ${reset}"
 rightbox5="${purple} /                                                 | ${reset}"
 rightbox6="${purple} /__________________________________________________| ${reset}"
 

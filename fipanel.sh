@@ -60,7 +60,7 @@ today=$(date +%d)
 dot="${purple}•${reset}"
 
 #Expenses 
-mortgage='$1,370'
+mortgage='1370'
 hoa='100'
 elec='130'
 water='30'
@@ -86,8 +86,12 @@ subway='20'
 chip='20'
 items='30'
 med='650'
-gym="25"
-unexpected="100"
+gym='25'
+unexpected='100'
+
+#Totals
+total=$(($mortgage+$hoa+$elec+$water+$gas+$sewer+$trash+$signature+$title+$citi+$barclay+$chase+$khols+$internet+$phone+$food+$hule+$berg+$health+$cleaning+$juice+$coop+$subway+$chip+$items+$med+$gym+$unexpected ))
+paid='0'
 
 #Dates
 mortdate="2 "
@@ -127,6 +131,7 @@ if [[ "$mortdate" -gt "$today" ]]
    else
    mortdate1="${green}✔ $month $mortdate${reset}"
    mortprice="${green}$mortgage${reset}"
+   paid=$(($paid+$mortgage))
 fi
 
 if [[ "$hoadate" -gt "$today" ]]
@@ -136,6 +141,7 @@ if [[ "$hoadate" -gt "$today" ]]
    else
    hoadate1="${green}✔ $month $hoadate${reset}"
    hoaprice="${green}$hoa${reset}"
+   paid=$(($paid+$hoa))
 fi
 
 if [[ "$elecdate" -gt "$today" ]]
@@ -145,6 +151,7 @@ if [[ "$elecdate" -gt "$today" ]]
    else
    elecdate1="${green}✔ $month $elecdate${reset}"
    elecprice="${green}$elec${reset}"
+   paid=$(($paid+$elec))
 fi
 
 if [[ "$waterdate" -gt "$today" ]]
@@ -154,6 +161,7 @@ if [[ "$waterdate" -gt "$today" ]]
    else
    waterdate1="${green}✔ $month $waterdate${reset}"
    waterprice="${green}$water${reset}"
+   paid=$(($paid+$water))
 fi
 
 if [[ "$gasdate" -gt "$today" ]]
@@ -163,6 +171,7 @@ if [[ "$gasdate" -gt "$today" ]]
    else
    gasdate1="${green}✔ $month $gasdate${reset}"
    gasprice="${green}$gas${reset}"
+   paid=$(($paid+$gas))
 fi
 
 if [[ "$sewerdate" -gt "$today" ]]
@@ -172,6 +181,7 @@ if [[ "$sewerdate" -gt "$today" ]]
    else
    sewerdate1="${green}✔ $month $sewerdate${reset}"
    sewerprice="${green}$sewer${reset}"
+   paid=$(($paid+$sewer))
 fi
 
 if [[ "$trashdate" -gt "$today" ]]
@@ -181,6 +191,7 @@ if [[ "$trashdate" -gt "$today" ]]
    else
    trashdate1="${green}✔ $month $trashdate${reset}"
    trashprice="${green}$trash${reset}"
+   paid=$(($paid+$trash))
 fi
 
 if [[ "$sigdate" -gt "$today" ]]
@@ -190,6 +201,7 @@ if [[ "$sigdate" -gt "$today" ]]
    else
    sigdate1="${green}✔ $month $sigdate${reset}"
    sigprice="${green}$signature${reset}"
+   paid=$(($paid+$signature))
 fi
 
 if [[ "$titledate" -gt "$today" ]]
@@ -199,6 +211,7 @@ if [[ "$titledate" -gt "$today" ]]
    else
    titledate1="${green}✔ $month $titledate${reset}"
    titleprice="${green}$title${reset}"
+   paid=$(($paid+$title))
 fi
 
 if [[ "$citidate" -gt "$today" ]]
@@ -208,6 +221,7 @@ if [[ "$citidate" -gt "$today" ]]
    else
    citidate1="${green}✔ $month $citidate${reset}"
    citiprice="${green}$citi${reset}"
+   paid=$(($paid+$citi))
 fi
 
 if [[ "$barcdate" -gt "$today" ]]
@@ -217,6 +231,7 @@ if [[ "$barcdate" -gt "$today" ]]
    else
    barcdate1="${green}✔ $month $barcdate${reset}"
    barcprice="${green}$barclay${reset}"
+   paid=$(($paid+$barclay))
 fi
 
 if [[ "$chasedate" -gt "$today" ]]
@@ -226,6 +241,7 @@ if [[ "$chasedate" -gt "$today" ]]
    else
    chasedate1="${green}✔ $month $chasedate${reset}"
    chaseprice="${green}$chase${reset}"
+   paid=$(($paid+$chase))
 fi
 
 if [[ "$kholsdate" -gt "$today" ]]
@@ -235,6 +251,7 @@ if [[ "$kholsdate" -gt "$today" ]]
    else
    kholsdate1="${green}✔ $month $kholsdate${reset}"
    kholsprice="${green}$khols${reset}"
+   paid=$(($paid+$khols))
 fi
 
 if [[ "$innterdate" -gt "$today" ]]
@@ -244,6 +261,7 @@ if [[ "$innterdate" -gt "$today" ]]
    else
    interdate1="${green}✔ $month $interdate${reset}"
    interprice="${green}$internet${reset}"
+   paid=$(($paid+$internet))
 fi
 
 if [[ "$phonedate" -gt "$today" ]]
@@ -253,6 +271,7 @@ if [[ "$phonedate" -gt "$today" ]]
    else
    phonedate1="${green}✔ $month $phonedate${reset}"
    phoneprice="${green}$phone${reset}"
+   paid=$(($paid+$phone))
 fi
 
 if [[ "$fooddate" -gt "$today" ]]
@@ -262,6 +281,7 @@ if [[ "$fooddate" -gt "$today" ]]
    else
    fooddate1="${green}✔ $month $fooddate${reset}"
    foodprice="${green}$food${reset}"
+   paid=$(($paid+$food))
 fi
 
 if [[ "$huledate" -gt "$today" ]]
@@ -271,6 +291,7 @@ if [[ "$huledate" -gt "$today" ]]
    else
    huledate1="${green}✔ $month $huledate${reset}"
    huleprice="${green}$hule${reset}"
+   paid=$(($paid+$hule))
 fi
 
 if [[ "$bergdate" -gt "$today" ]]
@@ -280,6 +301,7 @@ if [[ "$bergdate" -gt "$today" ]]
    else
    bergdate1="${green}✔ $month $bergdate${reset}"
    bergprice="${green}$berg${reset}"
+   paid=$(($paid+$berg))
 fi
 
 if [[ "$healthdate" -gt "$today" ]]
@@ -289,6 +311,7 @@ if [[ "$healthdate" -gt "$today" ]]
    else
    healthdate1="${green}✔ $month $healthdate${reset}"
    healthprice="${green}$health${reset}"
+   paid=$(($paid+$health))
 fi
 
 if [[ "$cleaningdate" -gt "$today" ]]
@@ -298,6 +321,7 @@ if [[ "$cleaningdate" -gt "$today" ]]
    else
    cleaningdate1="${green}✔ $month $cleaningdate${reset}"
    cleaningprice="${green}$cleaning${reset}"
+   paid=$(($paid+$cleaning))
 fi
 
 if [[ "$juicedate" -gt "$today" ]]
@@ -307,6 +331,7 @@ if [[ "$juicedate" -gt "$today" ]]
    else
    juicedate1="${green}✔ $month $juicedate${reset}"
    juiceprice="${green}$juice${reset}"
+   paid=$(($paid+$juice))
 fi
 
 if [[ "$coopdate" -gt "$today" ]]
@@ -316,6 +341,7 @@ if [[ "$coopdate" -gt "$today" ]]
    else
    coopdate1="${green}✔ $month $coopdate${reset}"
    coopprice="${green}$coop${reset}"
+   paid=$(($paid+$coop))
 fi
 
 if [[ "$subwaydate" -gt "$today" ]]
@@ -325,6 +351,7 @@ if [[ "$subwaydate" -gt "$today" ]]
    else
    subwaydate1="${green}✔ $month $subwaydate${reset}"
    subwayprice="${green}$subway${reset}"
+   paid=$(($paid+$subway))
 fi
 
 if [[ "$chipdate" -gt "$today" ]]
@@ -334,6 +361,7 @@ if [[ "$chipdate" -gt "$today" ]]
    else
    chipdate1="${green}✔ $month $chipdate${reset}"
    chipprice="${green}$chip${reset}"
+   paid=$(($paid+$chip))
 fi
 
 if [[ "$itemsdate" -gt "$today" ]]
@@ -343,6 +371,7 @@ if [[ "$itemsdate" -gt "$today" ]]
    else
    itemsdate1="${green}✔ $month $itemsdate${reset}"
    itemsprice="${green}$items${reset}"
+   paid=$(($paid+$items))
 fi
 
 if [[ "$meddate" -gt "$today" ]]
@@ -352,6 +381,7 @@ if [[ "$meddate" -gt "$today" ]]
    else
    meddate1="${green}✔ $month $meddate${reset}"
    medprice="${green}$med${reset}"
+   paid=$(($paid+$med))
 fi
 
 if [[ "$gymdate" -gt "$today" ]]
@@ -361,6 +391,7 @@ if [[ "$gymdate" -gt "$today" ]]
    else
    gymdate1="${green}✔ $month $gymdate${reset}"
    gymprice="${green}$gym${reset}"
+   paid=$(($paid+$gym))
 fi
 
 if [[ "$unexpecteddate" -gt "$today" ]]
@@ -370,7 +401,10 @@ if [[ "$unexpecteddate" -gt "$today" ]]
    else
    unexpecteddate1="${green}✔ $month $unexpecteddate${reset}"
    unexpectedprice="${green}$unexpected${reset}"
+   paid=$(($paid+$unexpected))
 fi
+
+remain=$(( $total - $paid ))
 
 #Left Side
 lefthome="${purple}Home:${reset}"
@@ -414,10 +448,12 @@ right10="${cyan}[ ${reset}$itemsdate1${cyan} ]───────────�
 right11="${cyan}[ ${reset}$meddate1${cyan} ]──────────────╼[ ${reset}${blue}Medicine:${reset} $medprice${cyan} ]${reset}"
 right12="${cyan}[ ${reset}$gymdate1${cyan} ]─────────────────────╼[ ${reset}${blue}Gym:${reset} $gymprice${cyan} ]${reset}"
 right13="${cyan}[ ${reset}$unexpecteddate1${cyan} ]──────────────╼[ ${reset}${blue}Unexpected:${reset} $unexpectedprice${cyan} ]${reset}"
+box3="${cyan}$"${green}$paid${reset}" paid in $month${reset}"
+box4="${cyan}$"${red}$remain${reset}" remaining in $month${reset}"
 rightbox1="${purple} ______________________________________________ ${reset}"
 rightbox2="${purple} /                                              | ${reset}"
-rightbox3="${purple} /                                               | ${reset}"
-rightbox4="${purple} /                                                | ${reset}"
+rightbox3="${purple} /              $box3                ${purple}| ${reset}"
+rightbox4="${purple} /              $box4           ${purple} | ${reset}"
 rightbox5="${purple} /                                                 | ${reset}"
 rightbox6="${purple} /__________________________________________________| ${reset}"
 

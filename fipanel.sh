@@ -450,12 +450,13 @@ right12="${cyan}[ ${reset}$gymdate1${cyan} ]────────────
 right13="${cyan}[ ${reset}$unexpecteddate1${cyan} ]──────────────╼[ ${reset}${blue}Unexpected:${reset} $unexpectedprice${cyan} ]${reset}"
 box3="${cyan}$"${green}$paid${reset}"${cyan} paid ${reset}"
 box4="${cyan}$"${red}$remain${reset}"${cyan} remaining ${reset}"
+box5="${cyan}$"${blue}$total${reset}"${cyan} total ${reset}"
 rightbox1="${purple} ______________________________________________ ${reset}"
-rightbox2="${purple} /                                              | ${reset}"
-rightbox3="${purple} /              $box3                      ${purple}| ${reset}"
-rightbox4="${purple} /              $box4                 ${purple} | ${reset}"
-rightbox5="${purple} /                                                 | ${reset}"
-rightbox6="${purple} /__________________________________________________| ${reset}"
+rightbox2="${purple} /                   /                          | ${reset}"
+rightbox3="${purple} /  $box3     ${purple} /                           | ${reset}"
+rightbox4="${purple} /  $box4 ${purple}/                           ${purple} | ${reset}"
+rightbox5="${purple} /  $box5     ${purple}/                             ${purple}| ${reset}"
+#rightbox6="${purple} /_________________________________________________| ${reset}"
 
 
 IFS='
@@ -503,7 +504,7 @@ echo '
 
 function completed(){
       duration=$(( SECONDS - start ))
-      echo "${blue}╭────╼${reset}${purple} Completed in: ${reset}${cyan}$duration${reset}${cyan}s${reset}    $dot ${purple} /__________________________________________________| ${reset}"
+      echo "${blue}╭────╼${reset}${purple} Completed in: ${reset}${cyan}$duration${reset}${cyan}s${reset}    $dot ${purple} /___________________/______________________________| ${reset}"
 }
 
 #Arguments

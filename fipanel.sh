@@ -5,11 +5,11 @@ reset="$(tput sgr0)"
 #black="$(tput bold; tput setaf 0)"
 blue="$(tput bold; tput setaf 4)"
 cyan="$(tput bold; tput setaf 6)"
-green="$(tput bold; tput setaf 2)"
+green="$(tput bold; tput setaf 120)"
 purple="$(tput bold; tput setaf 5)"
-#red="$(tput bold; tput setaf 1)"
+red="$(tput bold; tput setaf 1)"
 #white="$(tput bold; tput setaf 7)"
-#yellow="$(tput bold; tput setaf 3)"
+yellow="$(tput bold; tput setaf 3)"
 orange="$(tput bold; tput setaf 166)"
 #violet="$(tput bold; tput setaf 61)"
 host="${blue}$HOSTNAME${reset}"
@@ -57,6 +57,7 @@ endscript="false"
 minutes="1"
 month=$(date +%b)
 today=$(date +%d)
+dot="${purple}•${reset}"
 
 #Expenses 
 mortgage='$1,370'
@@ -121,8 +122,8 @@ unexpecteddate="30"
 # [Green] make sure you've paid it [Orange] prepare to pay it
 if [[ "$mortdate" -gt "$today" ]]
    then
-   mortdate1="${orange}✗ $month $mortdate${reset}"
-   mortprice="${orange}$mortgage$(reset)"
+   mortdate1="${red}✗ $month $mortdate${reset}"
+   mortprice="${red}$mortgage$(reset)"
    else
    mortdate1="${green}✔ $month $mortdate${reset}"
    mortprice="${green}$mortgage${reset}"
@@ -130,8 +131,8 @@ fi
 
 if [[ "$hoadate" -gt "$today" ]]
    then
-   hoadate1="${orange}✗ $month $hoadate${reset}"
-   hoaprice="${orange}$hoa${reset}"
+   hoadate1="${red}✗ $month $hoadate${reset}"
+   hoaprice="${red}$hoa${reset}"
    else
    hoadate1="${green}✔ $month $hoadate${reset}"
    hoaprice="${green}$hoa${reset}"
@@ -139,8 +140,8 @@ fi
 
 if [[ "$elecdate" -gt "$today" ]]
    then
-   elecdate1="${orange}✗ $month $elecdate${reset}"
-   elecprice="${orange}$elec${reset}"
+   elecdate1="${red}✗ $month $elecdate${reset}"
+   elecprice="${red}$elec${reset}"
    else
    elecdate1="${green}✔ $month $elecdate${reset}"
    elecprice="${green}$elec${reset}"
@@ -148,8 +149,8 @@ fi
 
 if [[ "$waterdate" -gt "$today" ]]
    then
-   waterdate1="${orange}✗ $month $waterdate${reset}"
-   waterprice="${orange}$water${reset}"
+   waterdate1="${red}✗ $month $waterdate${reset}"
+   waterprice="${red}$water${reset}"
    else
    waterdate1="${green}✔ $month $waterdate${reset}"
    waterprice="${green}$water${reset}"
@@ -157,8 +158,8 @@ fi
 
 if [[ "$gasdate" -gt "$today" ]]
    then
-   gasdate1="${orange}✗ $month $gasdate${reset}"
-   gasprice="${orange}$gas${reset}"
+   gasdate1="${red}✗ $month $gasdate${reset}"
+   gasprice="${red}$gas${reset}"
    else
    gasdate1="${green}✔ $month $gasdate${reset}"
    gasprice="${green}$gas${reset}"
@@ -166,8 +167,8 @@ fi
 
 if [[ "$sewerdate" -gt "$today" ]]
    then
-   sewerdate1="${orange}✗ $month $sewerdate${reset}"
-   sewerprice="${orange}$sewer${reset}"
+   sewerdate1="${red}✗ $month $sewerdate${reset}"
+   sewerprice="${red}$sewer${reset}"
    else
    sewerdate1="${green}✔ $month $sewerdate${reset}"
    sewerprice="${green}$sewer${reset}"
@@ -175,8 +176,8 @@ fi
 
 if [[ "$trashdate" -gt "$today" ]]
    then
-   trashdate1="${orange}✗ $month $trashdate${reset}"
-   trashprice="${orange}$trash${reset}"
+   trashdate1="${red}✗ $month $trashdate${reset}"
+   trashprice="${red}$trash${reset}"
    else
    trashdate1="${green}✔ $month $trashdate${reset}"
    trashprice="${green}$trash${reset}"
@@ -184,8 +185,8 @@ fi
 
 if [[ "$sigdate" -gt "$today" ]]
    then
-   sigdate1="${orange}✗ $month $sigdate${reset}"
-   sigprice="${orange}$signature${reset}"
+   sigdate1="${red}✗ $month $sigdate${reset}"
+   sigprice="${red}$signature${reset}"
    else
    sigdate1="${green}✔ $month $sigdate${reset}"
    sigprice="${green}$signature${reset}"
@@ -193,8 +194,8 @@ fi
 
 if [[ "$titledate" -gt "$today" ]]
    then
-   titledate1="${orange}✗ $month $titledate${reset}"
-   titleprice="${orange}$title${reset}"
+   titledate1="${red}✗ $month $titledate${reset}"
+   titleprice="${red}$title${reset}"
    else
    titledate1="${green}✔ $month $titledate${reset}"
    titleprice="${green}$title${reset}"
@@ -202,8 +203,8 @@ fi
 
 if [[ "$citidate" -gt "$today" ]]
    then
-   citidate1="${orange}✗ $month $citidate${reset}"
-   citiprice="${orange}$citi${reset}"
+   citidate1="${red}✗ $month $citidate${reset}"
+   citiprice="${red}$citi${reset}"
    else
    citidate1="${green}✔ $month $citidate${reset}"
    citiprice="${green}$citi${reset}"
@@ -211,8 +212,8 @@ fi
 
 if [[ "$barcdate" -gt "$today" ]]
    then
-   barcdate1="${orange}✗ $month $barcdate${reset}"
-   barcprice="${orange}$barclay${reset}"
+   barcdate1="${red}✗ $month $barcdate${reset}"
+   barcprice="${red}$barclay${reset}"
    else
    barcdate1="${green}✔ $month $barcdate${reset}"
    barcprice="${green}$barclay${reset}"
@@ -220,8 +221,8 @@ fi
 
 if [[ "$chasedate" -gt "$today" ]]
    then
-   chasedate1="${orange}✗ $month $chasedate${reset}"
-   chaseprice="${orange}$chase${reset}"
+   chasedate1="${red}✗ $month $chasedate${reset}"
+   chaseprice="${red}$chase${reset}"
    else
    chasedate1="${green}✔ $month $chasedate${reset}"
    chaseprice="${green}$chase${reset}"
@@ -229,8 +230,8 @@ fi
 
 if [[ "$kholsdate" -gt "$today" ]]
    then
-   kholsdate1="${orange}✗ $month $kholsdate${reset}"
-   kholsprice="${orange}$khols${reset}"
+   kholsdate1="${red}✗ $month $kholsdate${reset}"
+   kholsprice="${red}$khols${reset}"
    else
    kholsdate1="${green}✔ $month $kholsdate${reset}"
    kholsprice="${green}$khols${reset}"
@@ -238,8 +239,8 @@ fi
 
 if [[ "$innterdate" -gt "$today" ]]
    then
-   interdate1="${orange}✗ $month $interdate${reset}"
-   interprice="${orange}$internet${reset}"
+   interdate1="${red}✗ $month $interdate${reset}"
+   interprice="${red}$internet${reset}"
    else
    interdate1="${green}✔ $month $interdate${reset}"
    interprice="${green}$internet${reset}"
@@ -247,8 +248,8 @@ fi
 
 if [[ "$phonedate" -gt "$today" ]]
    then
-   phonedate1="${orange}✗ $month $phonedate${reset}"
-   phoneprice="${orange}$phonenet${reset}"
+   phonedate1="${red}✗ $month $phonedate${reset}"
+   phoneprice="${red}$phonenet${reset}"
    else
    phonedate1="${green}✔ $month $phonedate${reset}"
    phoneprice="${green}$phone${reset}"
@@ -256,8 +257,8 @@ fi
 
 if [[ "$fooddate" -gt "$today" ]]
    then
-   fooddate1="${orange}✗ $month $fooddate${reset}"
-   foodprice="${orange}$food${reset}"
+   fooddate1="${red}✗ $month $fooddate${reset}"
+   foodprice="${red}$food${reset}"
    else
    fooddate1="${green}✔ $month $fooddate${reset}"
    foodprice="${green}$food${reset}"
@@ -265,8 +266,8 @@ fi
 
 if [[ "$huledate" -gt "$today" ]]
    then
-   huledate1="${orange}✗ $month $huledate${reset}"
-   huleprice="${orange}$hule${reset}"
+   huledate1="${red}✗ $month $huledate${reset}"
+   huleprice="${red}$hule${reset}"
    else
    huledate1="${green}✔ $month $huledate${reset}"
    huleprice="${green}$hule${reset}"
@@ -274,8 +275,8 @@ fi
 
 if [[ "$bergdate" -gt "$today" ]]
    then
-   bergdate1="${orange}✗ $month $bergdate${reset}"
-   bergprice="${orange}$berg${reset}"
+   bergdate1="${red}✗ $month $bergdate${reset}"
+   bergprice="${red}$berg${reset}"
    else
    bergdate1="${green}✔ $month $bergdate${reset}"
    bergprice="${green}$berg${reset}"
@@ -283,8 +284,8 @@ fi
 
 if [[ "$healthdate" -gt "$today" ]]
    then
-   healthdate1="${orange}✗ $month $healthdate${reset}"
-   healthprice="${orange}$health${reset}"
+   healthdate1="${red}✗ $month $healthdate${reset}"
+   healthprice="${red}$health${reset}"
    else
    healthdate1="${green}✔ $month $healthdate${reset}"
    healthprice="${green}$health${reset}"
@@ -292,8 +293,8 @@ fi
 
 if [[ "$cleaningdate" -gt "$today" ]]
    then
-   cleaningdate1="${orange}✗ $month $cleaningdate${reset}"
-   cleaningprice="${orange}$cleaning${reset}"
+   cleaningdate1="${red}✗ $month $cleaningdate${reset}"
+   cleaningprice="${red}$cleaning${reset}"
    else
    cleaningdate1="${green}✔ $month $cleaningdate${reset}"
    cleaningprice="${green}$cleaning${reset}"
@@ -301,8 +302,8 @@ fi
 
 if [[ "$juicedate" -gt "$today" ]]
    then
-   juicedate1="${orange}✗ $month $juicedate${reset}"
-   juiceprice="${orange}$juice${reset}"
+   juicedate1="${red}✗ $month $juicedate${reset}"
+   juiceprice="${red}$juice${reset}"
    else
    juicedate1="${green}✔ $month $juicedate${reset}"
    juiceprice="${green}$juice${reset}"
@@ -310,8 +311,8 @@ fi
 
 if [[ "$coopdate" -gt "$today" ]]
    then
-   coopdate1="${orange}✗ $month $coopdate${reset}"
-   coopprice="${orange}$coop${reset}"
+   coopdate1="${red}✗ $month $coopdate${reset}"
+   coopprice="${red}$coop${reset}"
    else
    coopdate1="${green}✔ $month $coopdate${reset}"
    coopprice="${green}$coop${reset}"
@@ -319,8 +320,8 @@ fi
 
 if [[ "$subwaydate" -gt "$today" ]]
    then
-   subwaydate1="${orange}✗ $month $subwaydate${reset}"
-   subwayprice="${orange}$subway${reset}"
+   subwaydate1="${red}✗ $month $subwaydate${reset}"
+   subwayprice="${red}$subway${reset}"
    else
    subwaydate1="${green}✔ $month $subwaydate${reset}"
    subwayprice="${green}$subway${reset}"
@@ -328,8 +329,8 @@ fi
 
 if [[ "$chipdate" -gt "$today" ]]
    then
-   chipdate1="${orange}✗ $month $chipdate${reset}"
-   chipprice="${orange}$chip${reset}"
+   chipdate1="${red}✗ $month $chipdate${reset}"
+   chipprice="${red}$chip${reset}"
    else
    chipdate1="${green}✔ $month $chipdate${reset}"
    chipprice="${green}$chip${reset}"
@@ -337,8 +338,8 @@ fi
 
 if [[ "$itemsdate" -gt "$today" ]]
    then
-   itemsdate1="${orange}✗ $month $itemsdate${reset}"
-   itemsprice="${orange}$items${reset}"
+   itemsdate1="${red}✗ $month $itemsdate${reset}"
+   itemsprice="${red}$items${reset}"
    else
    itemsdate1="${green}✔ $month $itemsdate${reset}"
    itemsprice="${green}$items${reset}"
@@ -346,8 +347,8 @@ fi
 
 if [[ "$meddate" -gt "$today" ]]
    then
-   meddate1="${orange}✗ $month $meddate${reset}"
-   medprice="${orange}$med${reset}"
+   meddate1="${red}✗ $month $meddate${reset}"
+   medprice="${red}$med${reset}"
    else
    meddate1="${green}✔ $month $meddate${reset}"
    medprice="${green}$med${reset}"
@@ -355,8 +356,8 @@ fi
 
 if [[ "$gymdate" -gt "$today" ]]
    then
-   gymdate1="${orange}✗ $month $gymdate${reset}"
-   gymprice="${orange}$gym${reset}"
+   gymdate1="${red}✗ $month $gymdate${reset}"
+   gymprice="${red}$gym${reset}"
    else
    gymdate1="${green}✔ $month $gymdate${reset}"
    gymprice="${green}$gym${reset}"
@@ -364,8 +365,8 @@ fi
 
 if [[ "$unexpecteddate" -gt "$today" ]]
    then
-   unexpecteddate1="${orange}✗ $month $unexpecteddate${reset}"
-   unexpectedprice="${orange}$unexpected${reset}"
+   unexpecteddate1="${red}✗ $month $unexpecteddate${reset}"
+   unexpectedprice="${red}$unexpected${reset}"
    else
    unexpecteddate1="${green}✔ $month $unexpecteddate${reset}"
    unexpectedprice="${green}$unexpected${reset}"
@@ -373,34 +374,34 @@ fi
 
 #Left Side
 lefthome="${purple}Home:${reset}"
-left1="${cyan}[ ${reset}${blue}Mortgage:${reset} $mortprice${cyan} ]────────────────╼[ ${reset}$mortdate1${cyan} ]${reset} • "
-left2="${cyan}[ ${reset}${blue}HOA:${reset} $hoaprice${cyan} ]───────────────────────╼[ ${reset}$hoadate1${cyan} ]${reset} • "
-left3="${cyan}[ ${reset}${blue}Electric:${reset} $elecprice${cyan} ]─────────────────╼[ ${reset}$elecdate1${cyan} ]${reset} • "
-left4="${cyan}[ ${reset}${blue}Water:${reset} $waterprice${cyan} ]────────────────────╼[ ${reset}$waterdate1${cyan} ]${reset} • "
-left5="${cyan}[ ${reset}${blue}Gas:${reset} $gasprice${cyan} ]─────────────────────╼[ ${reset}$gasdate1${cyan} ]${reset} • "
-left6="${cyan}[ ${reset}${blue}Sewer:${reset} $sewerprice${cyan} ]──────────────────╼[ ${reset}$sewerdate1${cyan} ]${reset} • "
-left7="${cyan}[ ${reset}${blue}Trash:${reset} $trashprice${cyan} ]──────────────────╼[ ${reset}$trashdate1${cyan} ]${reset} • "
-blank1="                                           • "
-leftloans="${purple}Loans:${reset}                                    • "
-left8="${cyan}[ ${reset}${blue}Signature:${reset} $sigprice${cyan} ]─────────╼[ ${reset}$sigdate1${cyan} ]${reset} • "
-leftcredit="${purple}Credit:${reset}                               • "
-left9="${cyan}[ ${reset}${blue}Title:${reset} $titleprice${cyan} ]────────────╼[ ${reset}$titledate1${cyan} ]${reset} • "
-blank2="                                       • "
-left10="${cyan}[ ${reset}${blue}Citi:${reset} $titleprice${cyan} ]──────────╼[ ${reset}$citidate1${cyan} ]${reset} • "
-left11="${cyan}[ ${reset}${blue}Barclay:${reset} $barcprice${cyan} ]──────╼[ ${reset}$barcdate1${cyan} ]${reset} • "
-left12="${cyan}[ ${reset}${blue}Chase:${reset} $chaseprice${cyan} ]───────╼[ ${reset}$chasedate1${cyan} ]${reset} • "
-left13="${cyan}[ ${reset}${blue}Khols:${reset} $kholsprice${cyan} ]───────╼[ ${reset}$kholsdate1${cyan} ]${reset} • "
-blank3="                                 • "
-leftservices="${purple}Services:${reset}                       • "
-left14="${cyan}[ ${reset}${blue}Internet:${reset} $interprice${cyan} ]─╼[ ${reset}$interdate1${cyan} ]${reset} • "
-left15="${cyan}[ ${reset}${blue}Phone:${reset} $interprice${cyan} ]───╼[ ${reset}$interdate1${cyan} ]${reset} • "
-blank4="                             • "
-blank5="                            • "
+left1="${cyan}[ ${reset}${blue}Mortgage:${reset} $mortprice${cyan} ]────────────────╼[ ${reset}$mortdate1${cyan} ]${reset} $dot "
+left2="${cyan}[ ${reset}${blue}HOA:${reset} $hoaprice${cyan} ]───────────────────────╼[ ${reset}$hoadate1${cyan} ]${reset} $dot "
+left3="${cyan}[ ${reset}${blue}Electric:${reset} $elecprice${cyan} ]─────────────────╼[ ${reset}$elecdate1${cyan} ]${reset} $dot "
+left4="${cyan}[ ${reset}${blue}Water:${reset} $waterprice${cyan} ]────────────────────╼[ ${reset}$waterdate1${cyan} ]${reset} $dot "
+left5="${cyan}[ ${reset}${blue}Gas:${reset} $gasprice${cyan} ]─────────────────────╼[ ${reset}$gasdate1${cyan} ]${reset} $dot "
+left6="${cyan}[ ${reset}${blue}Sewer:${reset} $sewerprice${cyan} ]──────────────────╼[ ${reset}$sewerdate1${cyan} ]${reset} $dot "
+left7="${cyan}[ ${reset}${blue}Trash:${reset} $trashprice${cyan} ]──────────────────╼[ ${reset}$trashdate1${cyan} ]${reset} $dot "
+blank1="                                           $dot "
+leftloans="${purple}Loans:${reset}                                    $dot "
+left8="${cyan}[ ${reset}${blue}Signature:${reset} $sigprice${cyan} ]─────────╼[ ${reset}$sigdate1${cyan} ]${reset} $dot "
+leftcredit="${purple}Credit:${reset}                               $dot "
+left9="${cyan}[ ${reset}${blue}Title:${reset} $titleprice${cyan} ]────────────╼[ ${reset}$titledate1${cyan} ]${reset} $dot "
+blank2="                                       $dot "
+left10="${cyan}[ ${reset}${blue}Citi:${reset} $titleprice${cyan} ]──────────╼[ ${reset}$citidate1${cyan} ]${reset} $dot "
+left11="${cyan}[ ${reset}${blue}Barclay:${reset} $barcprice${cyan} ]──────╼[ ${reset}$barcdate1${cyan} ]${reset} $dot "
+left12="${cyan}[ ${reset}${blue}Chase:${reset} $chaseprice${cyan} ]───────╼[ ${reset}$chasedate1${cyan} ]${reset} $dot "
+left13="${cyan}[ ${reset}${blue}Khols:${reset} $kholsprice${cyan} ]───────╼[ ${reset}$kholsdate1${cyan} ]${reset} $dot "
+blank3="                                 $dot "
+leftservices="${purple}Services:${reset}                       $dot "
+left14="${cyan}[ ${reset}${blue}Internet:${reset} $interprice${cyan} ]─╼[ ${reset}$interdate1${cyan} ]${reset} $dot "
+left15="${cyan}[ ${reset}${blue}Phone:${reset} $interprice${cyan} ]───╼[ ${reset}$interdate1${cyan} ]${reset} $dot "
+blank4="                             $dot "
+blank5="                            $dot "
 #Right Side
 rightgroceries="                                                                   ${purple}Groceries:${reset}"
 right1="${cyan}[ ${reset}$fooddate1${cyan} ]────╼[ ${reset}${blue}Food:${reset} $foodprice${cyan} ]${reset}"
 right2="${cyan}[ ${reset}$huledate1${cyan} ]──────╼[ ${reset}${blue}Hule:${reset} $huleprice${cyan} ]${reset}"
-right3="${cyan}[ ${reset}$bergdate1${cyan} ]─────╼[ ${reset}${blue}DrBerg:${reset}${orange} $bergprice${reset}${cyan} ]${reset}"
+right3="${cyan}[ ${reset}$bergdate1${cyan} ]─────╼[ ${reset}${blue}DrBerg:${reset} $bergprice${cyan} ]${reset}"
 right4="${cyan}[ ${reset}$healthdate1${cyan} ]──────╼[ ${reset}${blue}Health:${reset} $healthprice${cyan} ]${reset}"
 right5="${cyan}[ ${reset}$cleaningdate1${cyan} ]─────╼[ ${reset}${blue}Cleaning:${reset} $cleaningprice${cyan} ]${reset}"
 rightgoingout="                          ${purple}Going out:${reset}"
@@ -466,7 +467,7 @@ echo '
 
 function completed(){
       duration=$(( SECONDS - start ))
-      echo "${blue}╭────╼${reset}${purple} Completed in: ${reset}${cyan}$duration${reset}${cyan}s${reset}    • ${purple} /__________________________________________________| ${reset}"
+      echo "${blue}╭────╼${reset}${purple} Completed in: ${reset}${cyan}$duration${reset}${cyan}s${reset}    $dot ${purple} /__________________________________________________| ${reset}"
 }
 
 #Arguments

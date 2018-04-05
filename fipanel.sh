@@ -47,7 +47,7 @@ ${cyan}[options]${reset}${green}
 about="
 ${cyan}${reset} fipanel v${version}
 
-        Is a command line widget for financial tracking. 
+        Is a command line widget for financial planning. 
 "
 
 #Variables

@@ -13,7 +13,6 @@ yellow="$(tput bold; tput setaf 3)"
 orange="$(tput bold; tput setaf 166)"
 #violet="$(tput bold; tput setaf 61)"
 host="${blue}$HOSTNAME${reset}"
-#header="${cyan}[ ${reset}${green}${reset}${cyan}mattscript @ ${reset}${host}${cyan} ]    ${reset}"
 
 #Arguments
 version=${cyan}1.0.0${reset}
@@ -91,6 +90,7 @@ unexpected='100'
 
 #Totals
 total=$(($mortgage+$hoa+$elec+$water+$gas+$sewer+$trash+$signature+$title+$citi+$barclay+$chase+$khols+$internet+$phone+$food+$hule+$berg+$health+$cleaning+$juice+$coop+$subway+$chip+$items+$med+$gym+$unexpected ))
+total=$(printf "%4.f\n" $total)
 paid='0'
 
 #Dates
@@ -404,7 +404,10 @@ if [[ "$unexpecteddate" -gt "$today" ]]
    paid=$(($paid+$unexpected))
 fi
 
+#Totals2
 remain=$(( $total - $paid ))
+remain=$(printf "%4.f\n" $remain | tail -c 5)
+paid=$(printf "%4.f\n" $paid)
 
 #Left Side
 lefthome="${purple}Home:${reset}"

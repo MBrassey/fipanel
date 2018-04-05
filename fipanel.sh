@@ -41,7 +41,7 @@ ${cyan}Usage:${cyan}${green} ./fipanel.sh ${reset}${purple}[--help|--version]${r
 
 ${cyan}[options]${reset}${green}
         --license       Show lisense information.
-        --about         What is mattscript?${reset}
+        --about         What is fipanel?${reset}
 "
 
 about="

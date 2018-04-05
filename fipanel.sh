@@ -18,7 +18,7 @@ host="${blue}$HOSTNAME${reset}"
 version=${cyan}1.0.0${reset}
 
 license="
-${cyan}${reset} mattscript v${version}
+${cyan}${reset} fipanel v${version}
 
         ${purple}Copyright (C) 2018 Matthew A. Brassey${reset}
 
@@ -37,7 +37,7 @@ ${cyan}${reset} mattscript v${version}
 "
 
 help="
-${cyan}Usage:${cyan}${green} ./mattscript.sh ${reset}${purple}[--help|--version]${reset}
+${cyan}Usage:${cyan}${green} ./fipanel.sh ${reset}${purple}[--help|--version]${reset}
 
 ${cyan}[options]${reset}${green}
         --license       Show lisense information.
@@ -45,9 +45,9 @@ ${cyan}[options]${reset}${green}
 "
 
 about="
-${cyan}${reset} mattscript v${version}
+${cyan}${reset} fipanel v${version}
 
-        Is my template for new bash scripts. 
+        Is a command line widget for financial tracking. 
 "
 
 #Variables

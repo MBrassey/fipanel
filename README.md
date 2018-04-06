@@ -1,2 +1,2 @@
 # fipanel
-Updating Finance Panel 
+CLI Finance Panel 

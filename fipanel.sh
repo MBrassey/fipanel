@@ -460,13 +460,16 @@ box6raw="$(curl https://blockchain.info/address/"$btc" 2>&1|grep final|sed 's/.\
 box6raw2=${box6raw:86}
 box6raw3="$(printf "%0.8f\n" "$box6raw2")"
 box6="${green}$box6raw3${reset}${blue} BTC${reset}"
+fi1='  __ _'
+fi2=' / _(_)'
+fi3="|  _| |"
+fi4="|_| |_|"
 rightbox1="${purple} ______________________________________________ ${reset}"
-rightbox2="${purple} /                   /                          | ${reset}"
-rightbox3="${purple} /  $box3     ${purple} /  ${reset}$box6${purple}           | ${reset}"
-rightbox4="${purple} /  $box4 ${purple}/                           ${purple} | ${reset}"
-rightbox5="${purple} /  $box5     ${purple}/                             ${purple}| ${reset}"
+rightbox2="${purple} /                   /                 $fi1   | ${reset}"
+rightbox3="${purple} /  $box3     ${purple} /  ${reset}$box6${purple}  $fi2  | ${reset}"
+rightbox4="${purple} /  $box4 ${purple}/                   $fi3 ${purple} | ${reset}"
+rightbox5="${purple} /  $box5     ${purple}/                    $fi4  ${purple}| ${reset}"
 #rightbox6="${purple} /_________________________________________________| ${reset}"
-
 
 IFS='
 '

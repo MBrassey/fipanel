@@ -57,6 +57,8 @@ minutes="1"
 month=$(date +%b)
 today=$(date +%d)
 dot="${purple}•${reset}"
+btc="14BfuuiPa37J9YJE2S1rNNdaoTrzxzdGN5"
+dash="XsacZeNikGyKTLdL4EhihpyTYVtGdWPhQu"
 
 #Expenses 
 mortgage='1370'
@@ -454,9 +456,13 @@ right13="${cyan}[ ${reset}$unexpecteddate1${cyan} ]─────────�
 box3="${cyan}$"${green}$paid${reset}"${cyan} paid ${reset}"
 box4="${cyan}$"${red}$remain${reset}"${cyan} remaining ${reset}"
 box5="${cyan}$"${blue}$total${reset}"${cyan} total ${reset}"
+box6raw="$(curl https://blockchain.info/address/"$btc" 2>&1|grep final|sed 's/.\{23\}$//')"
+box6raw2=${box6raw:86}
+box6raw3="$(printf "%0.8f\n" "$box6raw2")"
+box6="${green}$box6raw3${reset}${orange} BTC${reset}"
 rightbox1="${purple} ______________________________________________ ${reset}"
 rightbox2="${purple} /                   /                          | ${reset}"
-rightbox3="${purple} /  $box3     ${purple} /                           | ${reset}"
+rightbox3="${purple} /  $box3     ${purple} /  ${reset}$box6${purple}           | ${reset}"
 rightbox4="${purple} /  $box4 ${purple}/                           ${purple} | ${reset}"
 rightbox5="${purple} /  $box5     ${purple}/                             ${purple}| ${reset}"
 #rightbox6="${purple} /_________________________________________________| ${reset}"

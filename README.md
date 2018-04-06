@@ -1,2 +1,2 @@
 # fipanel
-CLI Finance Panel 
+Finance Panel CLI 

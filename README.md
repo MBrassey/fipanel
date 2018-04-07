@@ -6,5 +6,5 @@ Finance Panel CLI
     Usage: ./fipanel.sh [--help|--version]
 
     [options]
-            --license       Show lisense information.
+            --license       Show license information.
             --about         What is fipanel?

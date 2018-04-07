@@ -60,6 +60,7 @@ today=$(date +%d)
 dot="${purple}•${reset}"
 btc="14BfuuiPa37J9YJE2S1rNNdaoTrzxzdGN5"
 dash="XuG62om1EPH9USN1h9i5YA3D9xQfpNmJ1j"
+storj="0xDB63cc25DFa3870FE8aD5622880F8511E909A108"
 
 #Expenses 
 mortgage='1370'
@@ -458,13 +459,16 @@ box3="${cyan}$"${green}$paid${reset}"${blue} Paid ${reset}"
 box4="${cyan}$"${red}$remain${reset}"${blue} Remaining ${reset}"
 box5="${cyan}$"${cyan}$total${reset}"${blue} Total ${reset}"
 box6raw="$(curl https://blockchain.info/address/"$btc" 2>&1|grep final|sed 's/.\{23\}$//')"
-box6raw2=${box6raw:86}
+box6raw2=${box6raw:84}
 box6raw3="$(printf "%0.8f\n" "$box6raw2")"
 box6="${green}$box6raw3${reset}${blue} BTC${reset}"
 box7raw="$(curl https://explorer.dash.org/address/"$dash" 2>&1|grep Balance:|sed 's/.\{5\}$//')"
 box7raw2=${box7raw:14}
 box7raw3="$(printf "%0.8f\n" "$box7raw2")"
 box7="${green}$box7raw3${reset}${blue} DASH${reset}"
+box8raw="$(curl https://etherscan.io/token/Storj?a="$storj" 2>&1|grep " STORJ"|head -1 |sed 's/.\{7\}$//')"
+box8raw3="$(printf "%2.7f\n" "$box8raw")"
+box8="${green}$box8raw3${reset}${blue} STORJ${reset}"
 fi1="${fi}  __ _${reset}${purple}"
 fi2="${fi} / _(_)${reset}${purple}"
 fi3="${fi}|  _| |${reset}${purple}"
@@ -473,7 +477,7 @@ rightbox1="${purple} ______________________________________________ ${reset}"
 rightbox2="${purple} /                   /                 $fi1   | ${reset}"
 rightbox3="${purple} /  $box3     ${purple} /  ${reset}$box6${purple}  $fi2  | ${reset}"
 rightbox4="${purple} /  $box4 ${purple}/  ${reset}$box7${purple}  $fi3 ${purple} | ${reset}"
-rightbox5="${purple} /  $box5     ${purple}/                    $fi4  ${purple}| ${reset}"
+rightbox5="${purple} /  $box5     ${purple}/  ${reset}$box8${purple}  $fi4  ${purple}| ${reset}"
 #rightbox6="${purple} /_________________________________________________| ${reset}"
 
 IFS='

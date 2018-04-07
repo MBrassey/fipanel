@@ -435,7 +435,7 @@ left13="${cyan}[ ${reset}${blue}Khols:${reset} $kholsprice${cyan} ]────�
 blank3="                                 $dot "
 leftservices="${purple}Services:${reset}                       $dot "
 left14="${cyan}[ ${reset}${blue}Internet:${reset} $interprice${cyan} ]─╼[ ${reset}$interdate1${cyan} ]${reset} $dot "
-left15="${cyan}[ ${reset}${blue}Phone:${reset} $interprice${cyan} ]───╼[ ${reset}$interdate1${cyan} ]${reset} $dot "
+left15="${cyan}[ ${reset}${blue}Phone:${reset} $phoneprice${cyan} ]─────╼[ ${reset}$phonedate1${cyan} ]${reset} $dot "
 blank4="                             $dot "
 blank5="                            $dot "
 #Right Side

@@ -11,6 +11,7 @@ red="$(tput bold; tput setaf 1)"
 #white="$(tput bold; tput setaf 7)"
 yellow="$(tput bold; tput setaf 3)"
 orange="$(tput bold; tput setaf 166)"
+fi="$(tput bold; tput setaf 39)"
 #violet="$(tput bold; tput setaf 61)"
 host="${blue}$HOSTNAME${reset}"
 
@@ -58,7 +59,7 @@ month=$(date +%b)
 today=$(date +%d)
 dot="${purple}•${reset}"
 btc="14BfuuiPa37J9YJE2S1rNNdaoTrzxzdGN5"
-dash="XsacZeNikGyKTLdL4EhihpyTYVtGdWPhQu"
+dash="XuG62om1EPH9USN1h9i5YA3D9xQfpNmJ1j"
 
 #Expenses 
 mortgage='1370'
@@ -460,14 +461,18 @@ box6raw="$(curl https://blockchain.info/address/"$btc" 2>&1|grep final|sed 's/.\
 box6raw2=${box6raw:86}
 box6raw3="$(printf "%0.8f\n" "$box6raw2")"
 box6="${green}$box6raw3${reset}${blue} BTC${reset}"
-fi1="${blue}  __ _${reset}${purple}"
-fi2="${blue} / _(_)${reset}${purple}"
-fi3="${blue}|  _| |${reset}${purple}"
-fi4="${blue}|_| |_|${reset}${purple}"
+box7raw="$(curl https://explorer.dash.org/address/"$dash" 2>&1|grep Balance:|sed 's/.\{5\}$//')"
+box7raw2=${box7raw:14}
+box7raw3="$(printf "%0.8f\n" "$box7raw2")"
+box7="${green}$box7raw3${reset}${blue} DASH${reset}"
+fi1="${fi}  __ _${reset}${purple}"
+fi2="${fi} / _(_)${reset}${purple}"
+fi3="${fi}|  _| |${reset}${purple}"
+fi4="${fi}|_| |_|${reset}${purple}"
 rightbox1="${purple} ______________________________________________ ${reset}"
 rightbox2="${purple} /                   /                 $fi1   | ${reset}"
 rightbox3="${purple} /  $box3     ${purple} /  ${reset}$box6${purple}  $fi2  | ${reset}"
-rightbox4="${purple} /  $box4 ${purple}/                   $fi3 ${purple} | ${reset}"
+rightbox4="${purple} /  $box4 ${purple}/  ${reset}$box7${purple}  $fi3 ${purple} | ${reset}"
 rightbox5="${purple} /  $box5     ${purple}/                    $fi4  ${purple}| ${reset}"
 #rightbox6="${purple} /_________________________________________________| ${reset}"
 

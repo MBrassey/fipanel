@@ -93,7 +93,7 @@ gym='25'
 unexpected='100'
 
 #Totals
-total=$(($mortgage+$hoa+$elec+$water+$gas+$sewer+$trash+$signature+$title+$citi+$barclay+$chase+$khols+$internet+$phone+$food+$hule+$berg+$health+$cleaning+$juice+$coop+$subway+$chip+$items+$med+$gym+$unexpected ))
+total=$(($mortgage+$hoa+$elec+$water+$gas+$sewer+$trash+$signature+$title+$citi+$barclay+$chase+$khols+$internet+$phone+$food+$hule+$berg+$health+$cleaning+$juice+$coop+$subway+$chip+$items+$med+$gym+$unexpected))
 total=$(printf "%4.f\\n" $total)
 paid='0'
 
@@ -258,7 +258,7 @@ if [[ "$kholsdate" -gt "$today" ]]
    paid=$(($paid+$khols))
 fi
 
-if [[ "$innterdate" -gt "$today" ]]
+if [[ "$interdate" -gt "$today" ]]
    then
    interdate1="${red}✗ $month $interdate${reset}"
    interprice="${red}$internet${reset}"
@@ -428,7 +428,7 @@ left8="${cyan}[ ${reset}${blue}Signature:${reset} $sigprice${cyan} ]────
 leftcredit="${purple}Credit:${reset}                               $dot "
 left9="${cyan}[ ${reset}${blue}Title:${reset} $titleprice${cyan} ]────────────╼[ ${reset}$titledate1${cyan} ]${reset} $dot "
 blank2="                                       $dot "
-left10="${cyan}[ ${reset}${blue}Citi:${reset} $titleprice${cyan} ]──────────╼[ ${reset}$citidate1${cyan} ]${reset} $dot "
+left10="${cyan}[ ${reset}${blue}Citi:${reset} $citiprice${cyan} ]──────────╼[ ${reset}$citidate1${cyan} ]${reset} $dot "
 left11="${cyan}[ ${reset}${blue}Barclay:${reset} $barcprice${cyan} ]──────╼[ ${reset}$barcdate1${cyan} ]${reset} $dot "
 left12="${cyan}[ ${reset}${blue}Chase:${reset} $chaseprice${cyan} ]───────╼[ ${reset}$chasedate1${cyan} ]${reset} $dot "
 left13="${cyan}[ ${reset}${blue}Khols:${reset} $kholsprice${cyan} ]───────╼[ ${reset}$kholsdate1${cyan} ]${reset} $dot "

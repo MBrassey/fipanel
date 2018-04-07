@@ -94,7 +94,7 @@ unexpected='100'
 
 #Totals
 total=$(($mortgage+$hoa+$elec+$water+$gas+$sewer+$trash+$signature+$title+$citi+$barclay+$chase+$khols+$internet+$phone+$food+$hule+$berg+$health+$cleaning+$juice+$coop+$subway+$chip+$items+$med+$gym+$unexpected ))
-total=$(printf "%4.f\n" $total)
+total=$(printf "%4.f\\n" $total)
 paid='0'
 
 #Dates
@@ -271,7 +271,7 @@ fi
 if [[ "$phonedate" -gt "$today" ]]
    then
    phonedate1="${red}✗ $month $phonedate${reset}"
-   phoneprice="${red}$phonenet${reset}"
+   phoneprice="${red}$phone${reset}"
    else
    phonedate1="${green}✔ $month $phonedate${reset}"
    phoneprice="${green}$phone${reset}"
@@ -410,8 +410,8 @@ fi
 
 #Totals2
 remain=$(( $total - $paid ))
-remain=$(printf "%4.f\n" $remain | tail -c 5)
-paid=$(printf "%4.f\n" $paid)
+remain=$(printf "%4.f\\n" $remain | tail -c 5)
+paid=$(printf "%4.f\\n" $paid)
 
 #Left Side
 lefthome="${purple}Home:${reset}"
@@ -435,7 +435,7 @@ left13="${cyan}[ ${reset}${blue}Khols:${reset} $kholsprice${cyan} ]────�
 blank3="                                 $dot "
 leftservices="${purple}Services:${reset}                       $dot "
 left14="${cyan}[ ${reset}${blue}Internet:${reset} $interprice${cyan} ]─╼[ ${reset}$interdate1${cyan} ]${reset} $dot "
-left15="${cyan}[ ${reset}${blue}Phone:${reset} $phoneprice${cyan} ]─────╼[ ${reset}$phonedate1${cyan} ]${reset} $dot "
+left15="${cyan}[ ${reset}${blue}Phone:${reset} $phoneprice${cyan} ]───╼[ ${reset}$phonedate1${cyan} ]${reset} $dot "
 blank4="                             $dot "
 blank5="                            $dot "
 #Right Side
@@ -460,14 +460,14 @@ box4="${cyan}$"${red}$remain${reset}"${blue} Remaining ${reset}"
 box5="${cyan}$"${cyan}$total${reset}"${blue} Total ${reset}"
 box6raw="$(curl https://blockchain.info/address/"$btc" 2>&1|grep final|sed 's/.\{23\}$//')"
 box6raw2=${box6raw:84}
-box6raw3="$(printf "%0.8f\n" "$box6raw2")"
+box6raw3="$(printf "%0.8f\\n" "$box6raw2")"
 box6="${green}$box6raw3${reset}${blue} BTC${reset}"
 box7raw="$(curl https://explorer.dash.org/address/"$dash" 2>&1|grep Balance:|sed 's/.\{5\}$//')"
 box7raw2=${box7raw:14}
-box7raw3="$(printf "%0.8f\n" "$box7raw2")"
+box7raw3="$(printf "%0.8f\\n" "$box7raw2")"
 box7="${green}$box7raw3${reset}${blue} DASH${reset}"
 box8raw="$(curl https://etherscan.io/token/Storj?a="$storj" 2>&1|grep " STORJ"|head -1 |sed 's/.\{7\}$//')"
-box8raw3="$(printf "%2.7f\n" "$box8raw")"
+box8raw3="$(printf "%2.7f\\n" "$box8raw")"
 box8="${green}$box8raw3${reset}${blue} STORJ${reset}"
 fi1="${fi}  __ _${reset}${purple}"
 fi2="${fi} / _(_)${reset}${purple}"

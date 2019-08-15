@@ -1,5 +1,5 @@
 # fipanel
-Finance Panel CLI 
+Finance Panel CLI (depreciated)
 
 ![fipanel](fipanel.png)
 

@@ -534,7 +534,6 @@ for ((arg=0;arg<"${#args[@]}";arg++)); do
         [ "${args[$arg]}" == "--help" ] && echo "${help}" && exit
         [ "${args[$arg]}" == "--license" ] && echo "${license}" && exit
         [ "${args[$arg]}" == "--about" ] && echo "${about}" && exit
-        #[ "${args[$arg]}" == "--" ] && echo ${args[$arg]}
 done
 
 #Activate panel
